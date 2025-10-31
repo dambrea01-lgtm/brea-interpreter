@@ -75,11 +75,20 @@ Esta metodología asegura que **la comprensión no sea solo teórica**, sino bas
 
 Antes de comenzar a programar, es importante familiarizarse con algunos conceptos esenciales:
 
-1. **Lexing (Análisis léxico)**: convertir el código fuente en tokens identificables por el intérprete.
-2. **Parsing (Análisis sintáctico)**: organizar los tokens en una estructura que represente correctamente la lógica y reglas del lenguaje.
-3. **Runtime / Evaluación**: ejecutar las instrucciones del lenguaje siguiendo su semántica y reglas de alcance, variables, funciones y control de flujo.
+### Intérprete y compilador
 
-> Estos conceptos serán la base de todo el intérprete y aparecerán en cada sección a medida que construyamos Brea paso a paso.
+- **Intérprete:** ejecuta directamente el código fuente, línea por línea, permitiendo **experimentación rápida y depuración sencilla**.
+- **Compilador:** traduce el código a otro lenguaje o a un formato ejecutable, generalmente más eficiente.
+
+> 💻 Un compilador es un programa que lee archivos en un lenguaje, los traduce 🔄 y genera archivos en otro lenguaje 📄➡️📄. Puedes implementar un compilador en cualquier lenguaje —incluso en el mismo lenguaje que compila! 🔁. Esto se llama **self-hosting** .
+>
+> **Bootstrapping 🥾:** al principio necesitas otro compilador para compilar tu compilador. Una vez compilado, tu compilador puede **compilar futuras versiones de sí mismo**, descartando el compilador original. Este proceso se llama **bootstrapping**.
+>
+> **Lexing (Análisis léxico)**: convertir el código fuente en tokens identificables por el intérprete.
+> **Parsing (Análisis sintáctico)**: organizar los tokens en una estructura que represente correctamente la lógica y reglas del lenguaje.
+> **Runtime / Evaluación**: ejecutar las instrucciones del lenguaje siguiendo su semántica y reglas de alcance, variables, funciones y control de flujo.
+
+> Estos conceptos son muy importante para que construyamos nuestro proyecto paso a paso.
 
 ---
 
