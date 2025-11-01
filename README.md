@@ -51,7 +51,7 @@ brea-interpreter/
 
 ## Índice de capítulos 📖
 
-1. [Bienvenido](docs/01-bienvenido.md) 📝 – Introducción al proyecto y motivación.
+1. [Bienvenido](docs/01-Bienvenido.md) 📝 – Introducción al proyecto y motivación.
 2. Próximamente: **...**
 
 > Cada capítulo se construirá de forma progresiva, combinando **teoría, ejemplos y ejercicios prácticos**.
