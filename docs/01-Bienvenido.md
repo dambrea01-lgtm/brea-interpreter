@@ -1,4 +1,8 @@
-# Capítulo 1: Bienvenido a Brea 🧩
+# Capítulo 1: Introducción al proyecto Brea 🧩
+
+[↩️ Volver al inicio](../README.md)
+
+---
 
 Bienvenido al mundo de Brea. Este capítulo es la **puerta de entrada para comprender cómo funciona un lenguaje de programación desde cero** y cómo se construye un intérprete funcional en Java. Nuestro enfoque es **aprender haciendo**, entendiendo la teoría mientras desarrollamos código real.
 

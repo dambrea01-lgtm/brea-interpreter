@@ -8,6 +8,18 @@ Aquí no solo seguirás un tutorial, sino que **exploraremos juntos los fundamen
 
 ---
 
+## Índice de capítulos 📖
+
+📘 [1. Introducción del proyecto Brea](docs/01-Bienvenido.md)
+Introducción
+Por qué aprender a construir un intérprete
+Nuestro primer intérprete: jBrea en Java ☕
+Segunda fase: cBrea en C
+El aprendizaje práctico
+Conceptos clave a dominar
+
+---
+
 ## ¿Qué aprenderemos? 💻
 
 El objetivo de este proyecto es que **comprendas cómo funciona un lenguaje desde cero**, incluyendo:
@@ -46,15 +58,6 @@ brea-interpreter/
 ├── exercises/                 ← Ejercicios y mini-proyectos por tema
 └── resources/                 ← Enlaces, referencias y tutoriales externos
 ```
-
----
-
-## Índice de capítulos 📖
-
-1. [Bienvenido](docs/01-Bienvenido.md) 📝 – Introducción al proyecto y motivación.
-2. Próximamente: **...**
-
-> Cada capítulo se construirá de forma progresiva, combinando **teoría, ejemplos y ejercicios prácticos**.
 
 ---
 
