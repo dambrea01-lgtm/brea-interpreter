@@ -118,7 +118,7 @@ A medida que avancemos, notaremos que el desafío **no está solo en escribir c�
 
 ## Ejercicios propuestos (para ver soluciones acceda al link)
 
--![Ejercicio Propuesto 1](../ejercicios/)
+-![Ejercicio Propuesto 1](../ejercicios/01-ejercicios.md)
 
 - 💬 Define qué es un lenguaje específico de dominio (DSL - Domain Specific Language) y menciona al menos cinco ejemplos.
 
