@@ -120,7 +120,11 @@ A medida que avancemos, notaremos que el desafío **no está solo en escribir c�
 
 - [**Ejercicio Propuesto 1**](../ejercicios/01-ejercicios.md)
 
-- 💬 Define qué es un lenguaje específico de dominio (DSL - Domain Specific Language) y menciona al menos cinco ejemplos.
+> 💬 Define qué es un lenguaje específico de dominio (DSL - Domain Specific Language) y menciona al menos cinco ejemplos.
+
+- [**Ejercicio Propuesto 2 (Dasafio)**](en desarrollo - pronto lo subo resuelto)
+
+> 💬 Para practicar con punteros, define una lista doblemente enlazada de cadenas en el heap. Escribe funciones para insertar, buscar y eliminar elementos de la lista.
 
 ---
 
