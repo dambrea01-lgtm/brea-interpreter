@@ -8,7 +8,7 @@ Bienvenido al mundo de Brea. Este capítulo es la **puerta de entrada para compr
 
 ---
 
-## Introducción
+## 🧩 Introducción
 
 En esta primera etapa vamos a:
 
@@ -20,7 +20,7 @@ El objetivo es que al final es que tengamos **una visión clara de cómo un leng
 
 ---
 
-## Por qué aprender a construir un intérprete
+## 🤔 Por qué aprender a construir un intérprete
 
 Crear un lenguaje puede parecer intimidante, pero pienso que es un **ejercicio extremadamente valioso** para cualquier programador, te enumero algunos motivos:
 
@@ -33,7 +33,7 @@ Incluso si no planeas crear un lenguaje de propósito general, los **lenguajes d
 
 ---
 
-## Nuestro primer intérprete: jBrea en Java ☕
+## ☕ Nuestro primer intérprete: jBrea en Java
 
 Para empezar, construiremos **jBrea**, un intérprete simple en Java. La elección de Java tiene varias ventajas:
 
@@ -51,7 +51,7 @@ Este enfoque nos permitirá **ver claramente cómo cada parte del intérprete in
 
 ---
 
-## Segunda fase: cBrea en C
+## ⚙️ Segunda fase: cBrea en C
 
 Más adelante construiremos **cBrea**, la versión en C, con el objetivo de:
 
@@ -63,7 +63,7 @@ Mientras jBrea nos enseña la lógica y la claridad conceptual, cBrea nos permit
 
 ---
 
-## El aprendizaje práctico
+## 🧪 El aprendizaje práctico
 
 La mejor manera de entender un lenguaje es **interactuar con él**:
 
@@ -75,7 +75,7 @@ Esta metodología asegura que **la comprensión no sea solo teórica**, sino bas
 
 ---
 
-## Conceptos clave a dominar
+## 🔑 Conceptos clave a dominar
 
 Antes de comenzar a programar, es importante familiarizarse con algunos conceptos esenciales:
 
