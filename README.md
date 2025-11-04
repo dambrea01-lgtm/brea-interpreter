@@ -52,12 +52,11 @@ De esta manera, no solo construimos un intérprete funcional, sino que **creamos
 brea-interpreter/
 ├── README.md                  ← Este archivo
 ├── docs/
-│   ├── 01-bienvenido.md       ← Capítulo 1: documentación introductoria
+│   ├── 01-bienvenido.md       ← Capítulo por capitulos en docs
 │   └── assets/                ← Imágenes relacionadas con los capítulos
-├── src/                       ← Código fuente del intérprete (lexer, parser, runtime)
-├── examples/                  ← Scripts de ejemplo en Brea
-├── exercises/                 ← Ejercicios y mini-proyectos por tema
-└── resources/                 ← Enlaces, referencias y tutoriales externos
+├── src/                       ← Código
+├── ejercicios/                ← Ejercicios y mini-proyectos resueltos por tema
+└── recursos/                  ← recursos del tutorial (imagenes, pdf, ...)
 ```
 
 ---

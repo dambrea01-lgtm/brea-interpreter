@@ -116,6 +116,14 @@ A medida que avancemos, notaremos que el desafío **no está solo en escribir c�
 
 ---
 
+## Ejercicios propuestos (para ver soluciones acceda al link)
+
+-![Ejercicio Propuesto 1](../ejercicios/)
+
+- 💬 Define qué es un lenguaje específico de dominio (DSL - Domain Specific Language) y menciona al menos cinco ejemplos.
+
+---
+
 > Este es solo el comienzo. Con cada paso, tu comprensión de cómo un lenguaje vive, respira y se ejecuta crecerá de manera tangible y práctica.
 
 ---
