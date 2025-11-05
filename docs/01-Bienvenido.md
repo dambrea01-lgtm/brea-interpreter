@@ -11,17 +11,17 @@ Bienvenido al mundo de Brea. Este capítulo es la **puerta de entrada para compr
 
 # 📚 Índice del Capítulo
 
-| Sección                                                                                      | Descripción                                                     |
-| :------------------------------------------------------------------------------------------- | :-------------------------------------------------------------- |
-| [🧩 Introducción](#introducción)                                                             | Qué aprenderás en esta primera etapa y cuál es el objetivo.     |
-| [🤔 Por qué aprender a construir un intérprete](#por-qué-aprender-a-construir-un-intérprete) | Razones para crear tu propio lenguaje e intérprete.             |
-| [☕ Nuestro primer intérprete: jBrea en Java](#nuestro-primer-intérprete-jbrea-en-java)      | Primera versión del intérprete escrita en Java.                 |
-| [⚙️ Segunda fase: cBrea en C](#segunda-fase-cbrea-en-c)                                      | Versión en C para comprender la ejecución a bajo nivel.         |
-| [🧪 El aprendizaje práctico](#el-aprendizaje-práctico)                                       | Cómo combinaremos teoría, práctica y desafíos.                  |
-| [🔑 Conceptos clave a dominar](#conceptos-clave-a-dominar)                                   | Diferencias entre intérprete y compilador, y conceptos básicos. |
-| [💡 Por qué es un gran ejercicio](#por-qué-es-un-gran-ejercicio)                             | Qué habilidades ganarás al implementar un lenguaje.             |
-| [🧭 Resumen del capítulo](#resumen-del-capítulo)                                             | Puntos más importantes que cubrimos.                            |
-| [✏️ Ejercicios propuestos](#ejercicios-propuestos-para-ver-soluciones-acceda-al-link)        | Enlaces a los ejercicios prácticos del capítulo.                |
+| Sección                                                                                       | Descripción                                                     |
+| :-------------------------------------------------------------------------------------------- | :-------------------------------------------------------------- |
+| [🧩 Introducción](#-introducción)                                                             | Qué aprenderás en esta primera etapa y cuál es el objetivo.     |
+| [🤔 Por qué aprender a construir un intérprete](#-por-qué-aprender-a-construir-un-intérprete) | Razones para crear tu propio lenguaje e intérprete.             |
+| [☕ Nuestro primer intérprete: jBrea en Java](#-nuestro-primer-intérprete-jbrea-en-java)      | Primera versión del intérprete escrita en Java.                 |
+| [⚙️ Segunda fase: cBrea en C](#-segunda-fase-cbrea-en-c)                                      | Versión en C para comprender la ejecución a bajo nivel.         |
+| [🧪 El aprendizaje práctico](#-el-aprendizaje-práctico)                                       | Cómo combinaremos teoría, práctica y desafíos.                  |
+| [🔑 Conceptos clave a dominar](#-conceptos-clave-a-dominar)                                   | Diferencias entre intérprete y compilador, y conceptos básicos. |
+| [💡 Por qué es un gran ejercicio](#-por-qué-es-un-gran-ejercicio)                             | Qué habilidades ganarás al implementar un lenguaje.             |
+| [🧭 Resumen del capítulo](#resumen-del-capítulo)                                              | Puntos más importantes que cubrimos.                            |
+| [✏️ Ejercicios propuestos](#-ejercicios-propuestos)                                           | Enlaces a los ejercicios prácticos del capítulo.                |
 
 ---
 
@@ -68,7 +68,7 @@ Este enfoque nos permitirá **ver claramente cómo cada parte del intérprete in
 
 ---
 
-## ⚙️ Segunda fase: cBrea en C
+## ⚙️ Segunda fase cBrea en C
 
 Más adelante construiremos **cBrea**, la versión en C, con el objetivo de:
 
