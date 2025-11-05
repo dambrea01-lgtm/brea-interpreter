@@ -16,12 +16,12 @@ Bienvenido al mundo de Brea. Este capítulo es la **puerta de entrada para compr
 | [🧩 Introducción](#-introducción)                                                             | Qué aprenderás en esta primera etapa y cuál es el objetivo.     |
 | [🤔 Por qué aprender a construir un intérprete](#-por-qué-aprender-a-construir-un-intérprete) | Razones para crear tu propio lenguaje e intérprete.             |
 | [☕ Nuestro primer intérprete: jBrea en Java](#-nuestro-primer-intérprete-jbrea-en-java)      | Primera versión del intérprete escrita en Java.                 |
-| [⚙️ Segunda fase: cBrea en C](#-segunda-fase-cbrea-en-c)                                      | Versión en C para comprender la ejecución a bajo nivel.         |
+| [⚙️ Segunda fase: cBrea en C](#%E2%9A%99%EF%B8%8F-segunda-fase-cbrea-en-c)                    | Versión en C para comprender la ejecución a bajo nivel.         |
 | [🧪 El aprendizaje práctico](#-el-aprendizaje-práctico)                                       | Cómo combinaremos teoría, práctica y desafíos.                  |
 | [🔑 Conceptos clave a dominar](#-conceptos-clave-a-dominar)                                   | Diferencias entre intérprete y compilador, y conceptos básicos. |
 | [💡 Por qué es un gran ejercicio](#-por-qué-es-un-gran-ejercicio)                             | Qué habilidades ganarás al implementar un lenguaje.             |
-| [🧭 Resumen del capítulo](#resumen-del-capítulo)                                              | Puntos más importantes que cubrimos.                            |
-| [✏️Ejercicios propuestos](#%EF%B8%8Fejercicios-propuestos)                                    | Enlaces a los ejercicios prácticos del capítulo.                |
+| [🧭 Resumen del capítulo](#%F0%9F%A7%AD-resumen-del-capítulo)                                 | Puntos más importantes que cubrimos.                            |
+| [✏️ Ejercicios propuestos](#%EF%B8%8F-ejercicios-propuestos)                                  | Enlaces a los ejercicios prácticos del capítulo.                |
 
 ---
 
@@ -133,7 +133,7 @@ A medida que avancemos, notaremos que el desafío **no está solo en escribir c�
 
 ---
 
-## ✏️Ejercicios propuestos
+## ✏️ Ejercicios propuestos
 
 - [**Ejercicio Propuesto 1**](../ejercicios/tema-01/01-ejercicios.md)
 
