@@ -21,7 +21,7 @@ Bienvenido al mundo de Brea. Este capítulo es la **puerta de entrada para compr
 | [🔑 Conceptos clave a dominar](#-conceptos-clave-a-dominar)                                   | Diferencias entre intérprete y compilador, y conceptos básicos. |
 | [💡 Por qué es un gran ejercicio](#-por-qué-es-un-gran-ejercicio)                             | Qué habilidades ganarás al implementar un lenguaje.             |
 | [🧭 Resumen del capítulo](#resumen-del-capítulo)                                              | Puntos más importantes que cubrimos.                            |
-| [✏️Ejercicios propuestos](#ejercicios-propuestos)                                             | Enlaces a los ejercicios prácticos del capítulo.                |
+| [✏️Ejercicios propuestos](#%EF%B8%8Fejercicios-propuestos)                                    | Enlaces a los ejercicios prácticos del capítulo.                |
 
 ---
 
