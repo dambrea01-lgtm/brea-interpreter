@@ -66,7 +66,7 @@ plot(x, y);
 
 Existen cientos o miles, te muestro los nombres de unos cuantos mas:
 
-![imagen lenguaje de dominio especifico](../recursos/tema-01/img/lenguajesDominioEspecificos.png)
+![imagen lenguaje de dominio especifico](../../recursos/tema-01/img/lenguajesDominioEspecificos.png)
 
 ---
 

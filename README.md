@@ -12,12 +12,15 @@ Aquí no solo seguirás un tutorial, sino que **exploraremos juntos los fundamen
 
 ### 📘 [1. Introducción del proyecto Brea](docs/01-Bienvenido.md)
 
-        - [🧩 Introducción]
-        - [🤔 Por qué aprender a construir un intérprete]
-        - [☕ Nuestro primer intérprete: jBrea en Java]
-        - [⚙️ Segunda fase: cBrea en C]
-        - [🧪 El aprendizaje práctico]
-        - [🔑 Conceptos clave a dominar]
+- [🧩 Introducción](docs/01-Bienvenido.md#introducción)
+- [🤔 Por qué aprender a construir un intérprete](docs/01-Bienvenido.md#por-qué-aprender-a-construir-un-intérprete)
+- [☕ Nuestro primer intérprete: jBrea en Java](docs/01-Bienvenido.md#nuestro-primer-intérprete-jbrea-en-java)
+- [⚙️ Segunda fase: cBrea en C](docs/01-Bienvenido.md#segunda-fase-cbrea-en-c)
+- [🧪 El aprendizaje práctico](docs/01-Bienvenido.md#el-aprendizaje-práctico)
+- [🔑 Conceptos clave a dominar](docs/01-Bienvenido.md#conceptos-clave-a-dominar)
+- [💡 Por qué es un gran ejercicio](docs/01-Bienvenido.md#por-qué-es-un-gran-ejercicio)
+- [🧭 Resumen del capítulo](docs/01-Bienvenido.md#resumen-del-capítulo)
+- [✏️ Ejercicios propuestos](docs/01-Bienvenido.md#ejercicios-propuestos-para-ver-soluciones-acceda-al-link)
 
 ---
 
