@@ -16,12 +16,12 @@ Bienvenido al mundo de Brea. Este capítulo es la **puerta de entrada para compr
 | [🧩 Introducción](#-introducción)                                                             | Qué aprenderás en esta primera etapa y cuál es el objetivo.     |
 | [🤔 Por qué aprender a construir un intérprete](#-por-qué-aprender-a-construir-un-intérprete) | Razones para crear tu propio lenguaje e intérprete.             |
 | [☕ Nuestro primer intérprete: jBrea en Java](#-nuestro-primer-intérprete-jbrea-en-java)      | Primera versión del intérprete escrita en Java.                 |
-| [⚙️ Segunda fase: cBrea en C](#-segunda-fase-cbrea-en-c)                                      | Versión en C para comprender la ejecución a bajo nivel.         |
+| [⚙️ Segunda fase: cBrea en C](#segunda-fase-cbrea-en-c)                                       | Versión en C para comprender la ejecución a bajo nivel.         |
 | [🧪 El aprendizaje práctico](#-el-aprendizaje-práctico)                                       | Cómo combinaremos teoría, práctica y desafíos.                  |
 | [🔑 Conceptos clave a dominar](#-conceptos-clave-a-dominar)                                   | Diferencias entre intérprete y compilador, y conceptos básicos. |
-| [💡 Por qué es un gran ejercicio](#-por-qué-es-un-gran-ejercicio)                             | Qué habilidades ganarás al implementar un lenguaje.             |
-| [🧭 Resumen del capítulo](#-resumen-del-capítulo)                                             | Puntos más importantes que cubrimos.                            |
-| [🧠 Ejercicios propuestos](#-ejercicios-propuestos-para-ver-soluciones-acceda-al-link)        | Enlaces a los ejercicios prácticos del capítulo.                |
+| [💡 Por qué es un gran ejercicio](#por-qué-es-un-gran-ejercicio)                              | Qué habilidades ganarás al implementar un lenguaje.             |
+| [🧭 Resumen del capítulo](#resumen-del-capítulo)                                              | Puntos más importantes que cubrimos.                            |
+| [✏️ Ejercicios propuestos](#ejercicios-propuestos-para-ver-soluciones-acceda-al-link)         | Enlaces a los ejercicios prácticos del capítulo.                |
 
 ---
 
@@ -113,7 +113,7 @@ Antes de comenzar a programar, es importante familiarizarse con algunos concepto
 
 ---
 
-## Por qué es un gran ejercicio
+## 💡 Por qué es un gran ejercicio
 
 Implementar un lenguaje te obliga a:
 
@@ -125,7 +125,7 @@ A medida que avancemos, notaremos que el desafío **no está solo en escribir c�
 
 ---
 
-## Resumen del capítulo
+## 🧭 Resumen del capítulo
 
 - Comenzamos con **jBrea en Java**, centrándonos en claridad y comprensión.
 - Después construiremos **cBrea en C**, para aprender sobre eficiencia y control a nivel bajo.
@@ -133,7 +133,7 @@ A medida que avancemos, notaremos que el desafío **no está solo en escribir c�
 
 ---
 
-## Ejercicios propuestos (para ver soluciones acceda al link)
+## ✏️ Ejercicios propuestos (para ver soluciones acceda al link)
 
 - [**Ejercicio Propuesto 1**](../ejercicios/tema-01/01-ejercicios.md)
 
