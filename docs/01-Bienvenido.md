@@ -1,7 +1,7 @@
 # Capítulo 1: Introducción al proyecto Brea 🧩
 
-| [↩️ Volver al inicio del Proyecto](../README.md) |
-| :----------------------------------------------: |
+| [↩️ Volver al inicio del Proyecto](../README.md) | [➡️ Capítulo 2](../docs/02-PiezasDeUnLenguaje.md) |
+| :----------------------------------------------: | :-----------------------------------------------: |
 
 ---
 
@@ -151,5 +151,5 @@ A medida que avancemos, notaremos que el desafío **no está solo en escribir c�
 
 ---
 
-| [↩️ Volver al inicio del Proyecto](../README.md) |
-| :----------------------------------------------: |
+| [↩️ Volver al inicio del Proyecto](../README.md) | [➡️ Capítulo 2](../docs/02-PiezasDeUnLenguaje.md) |
+| :----------------------------------------------: | :-----------------------------------------------: |

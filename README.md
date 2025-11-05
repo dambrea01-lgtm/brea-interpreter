@@ -24,6 +24,18 @@ Aquí no solo seguirás un tutorial, sino que **exploraremos juntos los fundamen
         - [✏️ Ejercicios propuestos]
 ```
 
+### 📘 [2. Las Piezas que componen un lenguaje](docs/02-PiezasDeUnLenguaje.md)
+
+```text
+        - [✍️ Dibujando el lenguaje en un papel]
+        - [🔍 Escaneo (Scanning o Lexing)]
+        - [👇 Qué es el escáner léxico (o lexer)]
+        - [🧩 Qué es un token]
+        - [🔧 De texto a tokens: primer paso del compilador]
+        - [🌲 Análisis Sintáctico (Parsing)]
+        - [ desarrollando ... ]
+```
+
 ---
 
 ## ¿Qué aprenderemos? 💻
@@ -58,7 +70,7 @@ brea-interpreter/
 ├── README.md                  ← Este archivo
 ├── docs/
 │   ├── 01-bienvenido.md       ← Capítulo por capitulos en docs
-│   └── assets/                ← Imágenes relacionadas con los capítulos
+│   └── ...
 ├── src/                       ← Código
 ├── ejercicios/                ← Ejercicios y mini-proyectos resueltos por tema
 └── recursos/                  ← recursos del tutorial (imagenes, pdf, ...)
