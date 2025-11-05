@@ -118,11 +118,11 @@ A medida que avancemos, notaremos que el desafío **no está solo en escribir c�
 
 ## Ejercicios propuestos (para ver soluciones acceda al link)
 
-- [**Ejercicio Propuesto 1**](../ejercicios/01-ejercicios.md)
+- [**Ejercicio Propuesto 1**](../ejercicios/tema-01/01-ejercicios.md)
 
 > 💬 Define qué es un lenguaje específico de dominio (DSL - Domain Specific Language) y menciona al menos cinco ejemplos.
 
-- [**Ejercicio Propuesto 2 (Dasafio)**](en desarrollo - pronto lo subo resuelto)
+- [**Ejercicio Propuesto 2 (Dasafio)**](../ejercicios/tema-01/02-ejercicios.md)
 
 > 💬 Para practicar con punteros, define una lista doblemente enlazada de cadenas en el heap. Escribe funciones para insertar, buscar y eliminar elementos de la lista.
 
