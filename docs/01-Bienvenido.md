@@ -21,7 +21,7 @@ Bienvenido al mundo de Brea. Este capítulo es la **puerta de entrada para compr
 | [🔑 Conceptos clave a dominar](#-conceptos-clave-a-dominar)                                   | Diferencias entre intérprete y compilador, y conceptos básicos. |
 | [💡 Por qué es un gran ejercicio](#-por-qué-es-un-gran-ejercicio)                             | Qué habilidades ganarás al implementar un lenguaje.             |
 | [🧭 Resumen del capítulo](#resumen-del-capítulo)                                              | Puntos más importantes que cubrimos.                            |
-| [✏️ Ejercicios propuestos](#-ejercicios-propuestos)                                           | Enlaces a los ejercicios prácticos del capítulo.                |
+| [✏️Ejercicios propuestos](#ejercicios-propuestos)                                             | Enlaces a los ejercicios prácticos del capítulo.                |
 
 ---
 
@@ -133,7 +133,7 @@ A medida que avancemos, notaremos que el desafío **no está solo en escribir c�
 
 ---
 
-## ✏️ Ejercicios propuestos (para ver soluciones acceda al link)
+## ✏️Ejercicios propuestos
 
 - [**Ejercicio Propuesto 1**](../ejercicios/tema-01/01-ejercicios.md)
 
