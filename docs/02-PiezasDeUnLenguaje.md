@@ -1,13 +1,27 @@
 # Capitulo 2: Las piezas que componen un lenguaje
 
-| [↩️ Volver al inicio del Proyecto](../README.md) | [⬅️ Ir a Capítulo 1](../docs/01-MapaDelTerritorio.md) |
-| :----------------------------------------------: | :---------------------------------------------------: |
+| [↩️ Volver al inicio del Proyecto](../README.md) | [⬅️ Ir a Capítulo 1](../docs/01-Bienvenido.md) |
+| :----------------------------------------------: | :--------------------------------------------: |
 
 ---
 
 Desde hace mucho tiempo, buscamos que las computadoras **entiendan nuestras instrucciones**. Como hablar su lenguaje directamente resultó difícil, creamos **lenguajes de programación**: una forma más humana de comunicarnos con ellas.
 
 Aunque hoy las máquinas son mucho más rápidas y poderosas, los principios para construir un lenguaje **siguen siendo casi los mismos** .
+
+---
+
+# 📚 Índice del Capítulo 2
+
+| Sección                                                                                            | Descripción                                                                      |
+| :------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------- |
+| [✍️ Dibujando el lenguaje en un papel](#-dibujando-el-lenguaje-en-un-papel-✍️)                     | Cómo un boceto inicial se convierte en un mapa claro del programa.               |
+| [🔍 Escaneo (Scanning o Lexing)](#-escaneo-scanning-o-lexing)                                      | Primer paso: convertir texto crudo en tokens listos para el análisis.            |
+| [👀 Qué es el escáner léxico (lexer)](#-qué-es-el-escáner-léxico-o-lexer)                          | Explicación de cómo el lexer organiza caracteres en bloques significativos.      |
+| [🧩 Qué es un token](#-qué-es-un-token)                                                            | Concepto de token y ejemplos prácticos de los distintos tipos.                   |
+| [🔧 De texto a tokens: primer paso del compilador](#-de-texto-a-tokens-primer-paso-del-compilador) | Cómo el lexer encaja en el proceso general del compilador.                       |
+| [🌲 Análisis Sintáctico (Parsing)](#-análisis-sintáctico-parsing)                                  | Cómo los tokens se organizan en estructuras jerárquicas (AST).                   |
+| [💡 Apunte técnico](#-apunte-técnico)                                                              | Detalles técnicos sobre el parsing y su importancia para las etapas posteriores. |
 
 ---
 
@@ -137,5 +151,5 @@ Por lo tanto:
 
 ---
 
-| [↩️ Volver al inicio del Proyecto](../README.md) | [⬅️ Ir a Capítulo 1](../docs/01-MapaDelTerritorio.md) |
-| :----------------------------------------------: | :---------------------------------------------------: |
+| [↩️ Volver al inicio del Proyecto](../README.md) | [⬅️ Ir a Capítulo 1](../docs/01-Bienvenido.md) |
+| :----------------------------------------------: | :--------------------------------------------: |
