@@ -87,11 +87,11 @@ brea-interpreter/
 
 ---
 
-## ✨ Próximo paso: Capítulo 2 (desarrollando)
+## Próximo paso: Capítulo 2 (desarrollando) ✨
 
-En el Capítulo 2 exploraremos el fascinante viaje que realizan todos los lenguajes de programación 🧠💻 —desde su código base hasta llegar al intérprete que les da vida.
+En el Capítulo 2 exploraremos el fascinante viaje que realizan todos los lenguajes de programación —desde su código base hasta llegar al intérprete que les da vida.
 
-Analizaremos cada una de las posibles rutas que puede tomar un lenguaje en su fase de creación, comprendiendo cómo las decisiones de diseño, compilación e interpretación moldean su identidad y comportamiento. 🚀🔍
+Analizaremos cada una de las posibles rutas que puede tomar un lenguaje en su fase de creación, comprendiendo cómo las decisiones de diseño, compilación e interpretación moldean su identidad y comportamiento. 
 
 ---
 

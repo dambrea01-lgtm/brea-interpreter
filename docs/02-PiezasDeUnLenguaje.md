@@ -124,7 +124,7 @@ Para nosotros, lo importante es entender que **el parser da forma y sentido al c
 
 ---
 
-### Apunte técnico
+### 💡 Apunte técnico
 
 El parser **convierte la lista de tokens** en una **estructura organizada** (AST) que refleja la lógica y jerarquía del programa.  
 Esta estructura es clave para los siguientes pasos del compilador o intérprete, como:
