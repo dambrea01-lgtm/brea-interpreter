@@ -2,8 +2,8 @@
 
 ---
 
-| [↩️ Volver al capítulo 1](../docs/01-Bienvenido.md) | [↩️ Volver al inicio del Proyecto](../README.md) | [➡️ Ir al Ejercicio 2](02-ejercicios.md) |
-| :-------------------------------------------------: | :----------------------------------------------: | :--------------------------------------: |
+| [↩️ Volver al capítulo 1](../docs/01-Bienvenido.md) | [↩️ Volver al inicio del Proyecto](../README.md) | [➡️ Ir al Ejercicio 2](../tema-01/02-ejercicios.md) |
+| :-------------------------------------------------: | :----------------------------------------------: | :-------------------------------------------------: |
 
 ---
 
@@ -70,5 +70,5 @@ Existen cientos o miles, te muestro los nombres de unos cuantos mas:
 
 ---
 
-| [↩️ Volver al capítulo 1](../docs/01-Bienvenido.md) | [↩️ Volver al inicio del Proyecto](../README.md) | [➡️ Ir al Ejercicio 2](02-ejercicios.md) |
-| :-------------------------------------------------: | :----------------------------------------------: | :--------------------------------------: |
+| [↩️ Volver al capítulo 1](../docs/01-Bienvenido.md) | [↩️ Volver al inicio del Proyecto](../README.md) | [➡️ Ir al Ejercicio 2](../tema-01/02-ejercicios.md) |
+| :-------------------------------------------------: | :----------------------------------------------: | :-------------------------------------------------: |

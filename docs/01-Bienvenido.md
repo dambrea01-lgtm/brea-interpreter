@@ -1,10 +1,27 @@
 # Capítulo 1: Introducción al proyecto Brea 🧩
 
-[↩️ Volver al inicio](../README.md)
+| [↩️ Volver al inicio del Proyecto](../README.md) |
+| :----------------------------------------------: |
 
 ---
 
 Bienvenido al mundo de Brea. Este capítulo es la **puerta de entrada para comprender cómo funciona un lenguaje de programación desde cero** y cómo se construye un intérprete funcional en Java. Nuestro enfoque es **aprender haciendo**, entendiendo la teoría mientras desarrollamos código real.
+
+---
+
+# 📚 Índice del Capítulo
+
+| Sección                                                                                       | Descripción                                                     |
+| :-------------------------------------------------------------------------------------------- | :-------------------------------------------------------------- |
+| [🧩 Introducción](#-introducción)                                                             | Qué aprenderás en esta primera etapa y cuál es el objetivo.     |
+| [🤔 Por qué aprender a construir un intérprete](#-por-qué-aprender-a-construir-un-intérprete) | Razones para crear tu propio lenguaje e intérprete.             |
+| [☕ Nuestro primer intérprete: jBrea en Java](#-nuestro-primer-intérprete-jbrea-en-java)      | Primera versión del intérprete escrita en Java.                 |
+| [⚙️ Segunda fase: cBrea en C](#-segunda-fase-cbrea-en-c)                                      | Versión en C para comprender la ejecución a bajo nivel.         |
+| [🧪 El aprendizaje práctico](#-el-aprendizaje-práctico)                                       | Cómo combinaremos teoría, práctica y desafíos.                  |
+| [🔑 Conceptos clave a dominar](#-conceptos-clave-a-dominar)                                   | Diferencias entre intérprete y compilador, y conceptos básicos. |
+| [💡 Por qué es un gran ejercicio](#-por-qué-es-un-gran-ejercicio)                             | Qué habilidades ganarás al implementar un lenguaje.             |
+| [🧭 Resumen del capítulo](#-resumen-del-capítulo)                                             | Puntos más importantes que cubrimos.                            |
+| [🧠 Ejercicios propuestos](#-ejercicios-propuestos-para-ver-soluciones-acceda-al-link)        | Enlaces a los ejercicios prácticos del capítulo.                |
 
 ---
 
@@ -128,10 +145,11 @@ A medida que avancemos, notaremos que el desafío **no está solo en escribir c�
 
 ---
 
-> Este es solo el comienzo. Con cada paso, tu comprensión de cómo un lenguaje vive, respira y se ejecuta crecerá de manera tangible y práctica.
-
----
-
 > ¡Felicidades! 🎉 Has completado tu primer vistazo a Brea.  
 > Antes de escribir código, exploraremos un **mapa del lenguaje** que todo lenguaje de programación debe recorrer: va desde el **código fuente**, pasando por **símbolos (tokens)**, el **árbol sintáctico (syntax tree)**, ... hasta llegar a nuestro **código de máquina o bytecode**.  
 > 🌟 No entraremos en detalle todavía, eso lo exploraremos paso a paso en la siguiente sección.
+
+---
+
+| [↩️ Volver al inicio del Proyecto](../README.md) |
+| :----------------------------------------------: |

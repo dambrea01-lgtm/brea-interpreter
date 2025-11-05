@@ -5,7 +5,7 @@
 
 ---
 
-| [↩️ Volver al capítulo 1](../docs/01-Bienvenido.md) | [↩️ Volver al inicio del Proyecto](../README.md) | [⬅️ Ir al Ejercicio 1](01-ejercicio.md) |
+| [↩️ Volver al capítulo 1](../docs/01-Bienvenido.md) | [↩️ Volver al inicio del Proyecto](../README.md) | [⬅️ Ir al Ejercicio 1](../tema-01/01-ejercicios.md) |
 | :-------------------------------------------------: | :----------------------------------------------: | :-------------------------------------: |
 
 ---
