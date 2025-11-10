@@ -1,3 +1,20 @@
+╔══════════════════════════════════════════════════════════════════════╗
+║ ║
+║ 🧩 INTERPRETE-BREA 🧩 ║
+║ ║
+║ Construye tu propio lenguaje de programación desde cero 🚀 ║
+║ ║
+║ Aprende paso a paso cómo funciona un intérprete en Java ║
+║ y desarrolla tu lenguaje propio llamado Brea (o como quieras). ║
+║ ║
+║ 📚 Conceptos clave: tokens, parsing, tipado, funciones, clases... ║
+║ 💻 Ejercicios prácticos y ejemplos claros ║
+║ 🎓 Enseñar para aprender: sigue mi camino de aprendizaje ║
+║ ║
+║ Inspirado en Crafting Interpreters de Robert Nystrom ║
+║ ║
+╚══════════════════════════════════════════════════════════════════════╝
+
 # Bienvenido al proyecto Interprete-Brea 🧩
 
 Este proyecto nace de mi **curiosidad y motivación por entender profundamente cómo funciona un lenguaje de programación**, y de la convicción de que **la mejor manera de aprender es enseñando**.
@@ -91,7 +108,7 @@ brea-interpreter/
 
 En el Capítulo 2 exploraremos el fascinante viaje que realizan todos los lenguajes de programación —desde su código base hasta llegar al intérprete que les da vida.
 
-Analizaremos cada una de las posibles rutas que puede tomar un lenguaje en su fase de creación, comprendiendo cómo las decisiones de diseño, compilación e interpretación moldean su identidad y comportamiento. 
+Analizaremos cada una de las posibles rutas que puede tomar un lenguaje en su fase de creación, comprendiendo cómo las decisiones de diseño, compilación e interpretación moldean su identidad y comportamiento.
 
 ---
 
