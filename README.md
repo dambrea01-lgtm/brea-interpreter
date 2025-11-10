@@ -1,20 +1,3 @@
-╔══════════════════════════════════════════════════════════════════════╗
-║ ║
-║ 🧩 INTERPRETE-BREA 🧩 ║
-║ ║
-║ Construye tu propio lenguaje de programación desde cero 🚀 ║
-║ ║
-║ Aprende paso a paso cómo funciona un intérprete en Java ║
-║ y desarrolla tu lenguaje propio llamado Brea (o como quieras). ║
-║ ║
-║ 📚 Conceptos clave: tokens, parsing, tipado, funciones, clases... ║
-║ 💻 Ejercicios prácticos y ejemplos claros ║
-║ 🎓 Enseñar para aprender: sigue mi camino de aprendizaje ║
-║ ║
-║ Inspirado en Crafting Interpreters de Robert Nystrom ║
-║ ║
-╚══════════════════════════════════════════════════════════════════════╝
-
 # Bienvenido al proyecto Interprete-Brea 🧩
 
 Este proyecto nace de mi **curiosidad y motivación por entender profundamente cómo funciona un lenguaje de programación**, y de la convicción de que **la mejor manera de aprender es enseñando**.
