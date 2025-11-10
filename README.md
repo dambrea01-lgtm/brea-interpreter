@@ -1,5 +1,9 @@
 # Bienvenido al proyecto Interprete-Brea 🧩
 
+<p align="center">
+  <img src="recursos/banner.png" alt="Tutorial ABAP Cloud" width="1280"/>
+</p>
+
 Este proyecto nace de mi **curiosidad y motivación por entender profundamente cómo funciona un lenguaje de programación**, y de la convicción de que **la mejor manera de aprender es enseñando**.
 
 Aquí no solo seguirás un tutorial, sino que **exploraremos juntos los fundamentos, paso a paso**, construyendo un **intérprete en Java** y un lenguaje propio, llamado **Brea** (aunque puedes llamarlo como quieras), mientras explico cada decisión y concepto desde mi perspectiva de aprendizaje.
