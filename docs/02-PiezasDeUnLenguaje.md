@@ -3,16 +3,13 @@
 | [↩️ Volver al inicio del Proyecto](../README.md) | [⬅️ Ir a Capítulo 1](../docs/01-Bienvenido.md) |
 | :----------------------------------------------: | :--------------------------------------------: |
 
-## <br/><br/>
+<br/><br/><br/>
 
-<br/>
 Desde hace mucho tiempo, buscamos que las computadoras **entiendan nuestras instrucciones**. Como hablar su lenguaje directamente resultó difícil, creamos **lenguajes de programación**: una forma más humana de comunicarnos con ellas.
 
 Aunque hoy las máquinas son mucho más rápidas y poderosas, los principios para construir un lenguaje **siguen siendo casi los mismos** .
 
-## <br/><br/>
-
-<br/>
+<br/><br/><br/>
 
 # 📚 Índice del Capítulo 2
 
@@ -27,9 +24,7 @@ Aunque hoy las máquinas son mucho más rápidas y poderosas, los principios par
 | [💬 Análisis Semántico: Entendiendo el Significado del Código](#-análisis-semántico-entendiendo-el-significado-del-código)              | Es la etapa donde el compilador verifica que el código esté bien escrito, tenga sentido lógico y coherente según las reglas del lenguaje.                            |
 | [🛠️ Representaciones Intermedias (Intermediate Representations – IR)](#️-representaciones-intermedias-intermediate-representations--ir) | Explica cómo se usa una forma intermedia de código para conectar el front end y el back end, facilitando optimización y soporte multi-lenguaje y multi-arquitectura. |
 
-## <br/><br/>
-
-<br/>
+<br/><br/><br/>
 
 ## Dibujando el lenguaje en un papel ✍️
 
@@ -47,9 +42,7 @@ Nuestro recorrido comienza con el **texto en bruto del código fuente** del usua
 
 A lo largo de la historia, hubo muchos intentos fallidos y caminos sin salida: ideas que parecían prometedoras, pero que el tiempo dejó atrás. Aun así, esos experimentos forman parte del mapa de la computación y nos recuerdan que incluso los errores ayudan a construir el conocimiento.
 
-## <br/><br/>
-
-<br/>
+<br/><br/><br/>
 
 ## 🔍 Escaneo (Scanning o Lexing)
 
@@ -64,9 +57,7 @@ Al mismo tiempo, ignora lo que no aporta nada al código, como los **espacios en
 
 El resultado es una secuencia limpia y ordenada de tokens.
 
-## <br/><br/>
-
-<br/>
+<br/><br/><br/>
 
 ## 👇 Qué es el escáner léxico (o lexer)
 
@@ -86,9 +77,7 @@ v a r   s u m a   =   1 0   +   5 ;
 
 El escáner léxico (también llamado **lexer**) es el encargado de leer ese texto y darle estructura, separándolo en bloques con significado, llamados **tokens**.
 
-## <br/><br/>
-
-<br/>
+<br/><br/><br/>
 
 ## 🧩 Qué es un token
 
@@ -107,9 +96,7 @@ Un token es como una pequeña etiqueta que indica qué tipo de cosa representa u
 El escáner también puede guardar la posición (línea y columna) de cada token.
 Esto sirve para que, si hay un error, el compilador pueda decirte exactamente dónde ocurrió.
 
-## <br/><br/>
-
-<br/>
+<br/><br/><br/>
 
 ## 🔧 De texto a tokens: primer paso del compilador
 
@@ -125,7 +112,7 @@ Después, el **parser** (analizador sintáctico) toma esos tokens y los **organi
 
 Cada etapa se apoya en la anterior: el escaneo prepara el terreno, y el parser empieza a darle forma al código para que el lenguaje pueda interpretarlo o compilarlo correctamente
 
----
+<br/><br/><br/>
 
 ## 🌲 Análisis Sintáctico (Parsing)
 
@@ -152,9 +139,7 @@ Por lo tanto:
 > 💡 Sin parsing, el compilador vería solo una lista de símbolos sin sentido.  
 > Con él, el código **adquiere forma, jerarquía y lógica**, listo para ser entendido y procesado.
 
-## <br/><br/>
-
-<br/>
+<br/><br/><br/>
 
 ## 💬 Análisis Semántico: Entendiendo el Significado del Código
 
@@ -211,9 +196,7 @@ En otras palabras, el código no solo está bien escrito, sino que tiene lógica
 
 Sin análisis semántico, podríamos tener programas “bien escritos” pero completamente absurdos.
 
-## <br/><br/>
-
-<br/>
+<br/><br/><br/>
 
 ## 🛠️ Representaciones Intermedias (Intermediate Representations – IR)
 
@@ -262,9 +245,7 @@ Luego, los back-ends específicos de cada arquitectura (x86, ARM, 68k, etc.) tra
 
 🌳 Una **IR compartida** funciona como un puente entre los front-ends y los back-ends, permitiendo combinar muchos lenguajes y arquitecturas sin crear compiladores desde cero 🔧💡.
 
-## <br/><br/>
-
-<br/>
+<br/><br/><br/>
 
 | [↩️ Volver al inicio del Proyecto](../README.md) | [⬅️ Ir a Capítulo 1](../docs/01-Bienvenido.md) |
 | :----------------------------------------------: | :--------------------------------------------: |
