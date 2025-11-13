@@ -1,7 +1,30 @@
 # Capítulo 1: Introducción al proyecto Brea 🧩
 
-| [↩️ Volver al inicio del Proyecto](../README.md) | [➡️ Capítulo 2](../docs/02-PiezasDeUnLenguaje.md) |
-| :----------------------------------------------: | :-----------------------------------------------: |
+<p align="center">
+  <a href="../README.md" style="
+    display:inline-block;
+    background-color:#007bff;
+    color:white;
+    padding:10px 15px;
+    border-radius:6px;
+    text-decoration:none;
+    font-weight:bold;
+    margin-right:10px;">
+    ↩️ Volver al inicio
+  </a>
+
+<a href="../docs/02-PiezasDeUnLenguaje.md" style="
+    display:inline-block;
+    background-color:#28a745;
+    color:white;
+    padding:10px 15px;
+    border-radius:6px;
+    text-decoration:none;
+    font-weight:bold;">
+➡️ Capítulo 2
+</a>
+
+</p>
 
 <br/><br/><br/>
 
