@@ -126,17 +126,12 @@ Para nosotros, lo importante es entender que **el parser da forma y sentido al c
 
 ### 💡 Apunte técnico
 
-El parser **convierte la lista de tokens** en una **estructura organizada** (AST) que refleja la lógica y jerarquía del programa.  
+El parser **convierte la lista de tokens** en una **estructura organizada** (AST = “árbol de sintaxis abstracta” o "abstract syntax tree") que refleja la lógica y jerarquía del programa.  
 Esta estructura es clave para los siguientes pasos del compilador o intérprete, como:
 
 - Revisar que el código tenga sentido (**análisis semántico**)
 - Generar código que la máquina pueda ejecutar
 - Optimizar el programa para que sea más rápido o eficiente
-
-Existen diferentes formas de hacer parsing:
-
-- **Descenso recursivo 🌀**: fácil de entender y de programar, ideal para aprender.
-- **LL / LR parsers ⚙️**: más potentes, usados por herramientas automáticas como Yacc, Bison o ANTLR.
 
 Por lo tanto:
 
@@ -147,7 +142,60 @@ Por lo tanto:
 
 ---
 
-(desarrollando)
+## 💬 Análisis Semántico: Entendiendo el Significado del Código
+
+> Hasta ahora, ya tenemos nuestro código dividido en tokens (gracias al lexer) y organizado en una estructura lógica (gracias al parser). Pero… ¿el programa tiene sentido? ❓
+
+Por ejemplo, mira este código:
+
+´´´javascript
+var x = "hola";
+x = x + 10;
+´´´
+
+El parser no ve ningún problema aquí: la estructura está bien. Pero, desde el punto de vista del significado, algo está mal. ¡Estamos intentando sumar un número a una cadena de texto! Y ahí es donde entra en juego el análisis semántico.
+
+### 🔍 **¿Qué hace el análisis semántico?**
+
+El análisis semántico revisa que las operaciones y relaciones del programa tengan **sentido lógico**, según las reglas del lenguaje.
+
+Algunas tareas comunes del análisis semántico son:
+
+Tarea Descripción
+| Verificación | Descripción |
+| :--------------- | :------------------------------------------------------------ |
+| **Tipos** | Que las operaciones sean válidas (no sumar texto con números). |
+| **Nombres** | Que las variables y funciones existan antes de usarlas. |
+| **Ámbito (scope)** | Qué variables son visibles dentro de cada bloque. |
+
+Por ejemplo:
+
+- Podemos imaginarlo como una fábrica de ideas 🏭. **Primero**, el **lexer** corta la materia prima en piezas pequeñas (los **tokens**). Después, el **parser** ensambla esas piezas en un producto con forma (el **Árbol de sintaxis AST**). Y finalmente, el **analizador semántico** revisa que todo funcione correctamente antes de salir al mundo —que las piezas encajen y el resultado tenga sentido ⚙️.
+
+| Etapa         | Resultado esperado   |
+| :------------ | :------------------- |
+| **Lexer**     | Palabras correctas   |
+| **Parser**    | Oraciones correctas  |
+| **Semántico** | Significado correcto |
+
+### 🧰 ¿Qué obtiene el compilador de esta etapa?
+
+Después de este paso, el compilador tiene un programa que:
+
+- Tiene estructura correcta (gracias al parser)
+- Tiene significado válido (gracias al análisis semántico)
+
+En otras palabras, el código no solo está bien escrito, sino que tiene lógica. Y con eso, ya está listo para pasar a las siguientes fases del viaje: la **generación de código** o la **interpretación** 🎯.
+
+### 💬 En resumen
+
+| Etapa         | Qué hace                  | Resultado                    |
+| :------------ | :------------------------ | :--------------------------- |
+| **Lexer**     | Divide el texto en tokens | 🧩 Lista de tokens           |
+| **Parser**    | Da estructura al código   | 🌳 Árbol de sintaxis (AST)   |
+| **Semántico** | Verifica el significado   | ✅ Código coherente y válido |
+
+Sin análisis semántico, podríamos tener programas “bien escritos” pero completamente absurdos.
 
 ---
 
