@@ -56,7 +56,7 @@ A lo largo de la historia, hubo muchos intentos fallidos y caminos sin salida: i
 
 <br/><hr/><br/>
 
-## 2. 🔍 Escaneo (Scanning o Lexing)
+## 2. [🔍 Escaneo (Scanning o Lexing)](#-índice-del-capítulo-2)
 
 El primer paso para entender el código es el **escaneo**, también llamado **análisis léxico**.
 
@@ -71,7 +71,7 @@ El resultado es una secuencia limpia y ordenada de tokens.
 
 <br/><hr/><br/>
 
-## 3. 👀 ¿Qué es el escáner léxico (o lexer)?
+## 3. [👀 ¿Qué es el escáner léxico (o lexer)?](#-índice-del-capítulo-2)
 
 Cuando escribes un programa, lo que tienes es texto plano: letras, números, signos y espacios.
 
@@ -91,7 +91,7 @@ El escáner léxico (también llamado **lexer**) es el encargado de leer ese tex
 
 <br/><hr/><br/>
 
-## 4. 🧩 ¿Qué es un token?
+## 4. [🧩 ¿Qué es un token?](#-índice-del-capítulo-2)
 
 Un token es como una pequeña etiqueta que indica qué tipo de cosa representa una parte del código. Por ejemplo, el código anterior se convertiría en esta lista de tokens:
 
@@ -110,7 +110,7 @@ Esto sirve para que, si hay un error, el compilador pueda decirte exactamente d�
 
 <br/><hr/><br/>
 
-## 5. 🔧 De texto a tokens: primer paso del compilador
+## 5. [🔧 De texto a tokens: primer paso del compilador](#-índice-del-capítulo-2)
 
 El lexer es la primera etapa del proceso de compilación o interpretación:
 
@@ -126,7 +126,7 @@ Cada etapa se apoya en la anterior: el escaneo prepara el terreno, y el parser e
 
 <br/><hr/><br/>
 
-## 6. 🌲 Análisis Sintáctico (Parsing)
+## 6. [🌲 Análisis Sintáctico (Parsing)](#-índice-del-capítulo-2)
 
 El siguiente paso después del escaneo es el **parsing**, o análisis sintáctico.  
 Aquí es donde el código empieza a **tomar forma**: el parser entiende cómo juntar las piezas (tokens) para formar expresiones y sentencias más grandes.
@@ -153,7 +153,7 @@ Por lo tanto:
 
 <br/><hr/><br/>
 
-## 7. 💬 Análisis Semántico: Entendiendo el Significado del Código
+## 7. [💬 Análisis Semántico: Entendiendo el Significado del Código](#-índice-del-capítulo-2)
 
 > Hasta ahora, ya tenemos nuestro código dividido en tokens (gracias al lexer) y organizado en una estructura lógica (gracias al parser). Pero… ¿el programa tiene sentido? ❓
 
@@ -216,7 +216,7 @@ Sin análisis semántico, podríamos tener programas “bien escritos” pero co
 
 <br/><hr/><br/>
 
-## 8. 🛠️ Representaciones Intermedias (Intermediate Representations – IR)
+## 8. [🛠️ Representaciones Intermedias (Intermediate Representations – IR)](#-índice-del-capítulo-2)
 
 Podemos imaginar el **compilador** como una tubería de trabajo donde cada etapa transforma el código del usuario en una forma más organizada y fácil de procesar 🏗️.
 
@@ -269,7 +269,7 @@ Luego, los back-ends específicos de cada arquitectura (x86, ARM, 68k, etc.) tra
 
 <br/><hr/><br/>
 
-## 9. ⚡ Optimización (Optimization)
+## 9. [⚡ Optimización (Optimization)](#-índice-del-capítulo-2)
 
 > Optimizar un programa significa hacerlo más rápido o eficiente sin cambiar lo que hace 🔄.
 
@@ -295,7 +295,7 @@ Algunos conceptos clave de optimización: Constant propagation - Eliminación de
 
 <br/><hr/><br/>
 
-## 10. 💻 Generación de Código (Code Generation)
+## 10. [💻 Generación de Código (Code Generation)](#-índice-del-capítulo-2)
 
 Después de aplicar todas las optimizaciones, el último paso es convertir el programa en algo que la máquina pueda ejecutar. Esto se llama **generación de código**, y aquí “código” significa instrucciones primitivas que la CPU entiende, no el código que un humano lee.
 
@@ -314,7 +314,7 @@ La **generación de código** convierte la representación intermedia optimizada
 
 <br/><hr/><br/>
 
-## 11. 🖥️ Máquina Virtual (Virtual Machine – VM)
+## 11. [🖥️ Máquina Virtual (Virtual Machine – VM)](#-índice-del-capítulo-2)
 
 Si tu compilador genera **bytecode**, todavía queda un paso: traducirlo a algo que la máquina pueda ejecutar. Como no existe un chip que lo entienda directamente, tienes dos caminos.
 
@@ -326,7 +326,7 @@ Si tu compilador genera **bytecode**, todavía queda un paso: traducirlo a algo 
 
 <br/><hr/><br/>
 
-## 12. ⏱️ Tiempo de Ejecución (Runtime)
+## 12. [⏱️ Tiempo de Ejecución (Runtime)](#-índice-del-capítulo-2)
 
 Finalmente, tu programa está listo para ejecutarse.
 
@@ -344,7 +344,7 @@ En pocas palabras, el **runtime** proporciona los **servicios** que tu programa 
 
 <br/><hr/><br/>
 
-## 13. 🛣️ Atajos y rutas alternativas
+## 13. [🛣️ Atajos y rutas alternativas](#-índice-del-capítulo-2)
 
 El camino que hemos recorrido es el largo y completo, cubriendo todas las fases posibles. Sin embargo, algunos lenguajes usan atajos para simplificar las cosas.
 
@@ -356,7 +356,7 @@ Otra técnica es la **traducción dirigida por la sintaxis**. Aquí, cada regla 
 
 <br/><hr/><br/>
 
-## 14. 🌳 Intérpretes de recorrido de árbol (Tree-walk interpreters)
+## 14. [🌳 Intérpretes de recorrido de árbol (Tree-walk interpreters)](#-índice-del-capítulo-2)
 
 Algunos lenguajes ejecutan el programa directamente desde el **AST (árbol de sintaxis abstracta)** justo después de parsearlo. El intérprete recorre el árbol rama por rama y hoja por hoja, evaluando cada nodo.
 
@@ -366,7 +366,7 @@ Este enfoque es ideal para proyectos pequeños o educativos, porque es fácil de
 
 <br/><hr/><br/>
 
-## 15. 🔄 Transpilador (Transpiler)
+## 15. [🔄 Transpilador (Transpiler)](#-índice-del-capítulo-2)
 
 Escribir un back-end completo para un lenguaje puede ser mucho trabajo. Una alternativa es usar un lenguaje existente como objetivo, tratándolo como si fuera una representación intermedia (IR). Esto es básicamente lo que hace un transpiler.
 
@@ -385,7 +385,7 @@ Un **transpiler** es un compilador que apunta a otro lenguaje de alto nivel, usa
 
 <br/><hr/><br/>
 
-## 16. ✨ Compilación Just-in-Time (JIT)
+## 16. [✨ Compilación Just-in-Time (JIT)](#-índice-del-capítulo-2)
 
 Este enfoque es como una escalada alpina peligrosa, mejor para expertos. El código más rápido siempre será el que esté compilado a código máquina, pero a veces no sabes de antemano la arquitectura del usuario final.
 
@@ -401,7 +401,7 @@ Muchos lenguajes modernos como Java, C#, JavaScript y Ruby (YARV) usan JIT para 
 
 <br/><hr/><br/>
 
-## 17. 📚 Compiladores e Intérpretes (Compilers and Interpreters)
+## 17. [📚 Compiladores e Intérpretes (Compilers and Interpreters)](#-índice-del-capítulo-2)
 
 Después de llenar tu cabeza con toda la jerga de compiladores, máquinas virtuales y runtimes, llega la gran pregunta: **“¿Cuál es la diferencia entre un compilador y un intérprete?”**
 
@@ -447,7 +447,7 @@ Concluyo que:
 
 <br/><hr/><br/>
 
-## 18. 📝 Ejercicio Propuesto (en desarrollo)
+## 18. [📝 Ejercicio Propuesto (en desarrollo)](#-índice-del-capítulo-2)
 
 - **Ejercio Propuesto 1: Explorando Scanners y Parsers**
 
