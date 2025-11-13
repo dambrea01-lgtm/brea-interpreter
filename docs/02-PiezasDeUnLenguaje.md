@@ -3,7 +3,7 @@
 | [↩️ Volver al inicio del Proyecto](../README.md) | [⬅️ Ir a Capítulo 1](../docs/01-Bienvenido.md) |
 | :----------------------------------------------: | :--------------------------------------------: |
 
-<br/><br/><br/>
+<br/><hr/><br/>
 
 Desde hace mucho tiempo, buscamos que las computadoras **entiendan nuestras instrucciones**. Como hablar su lenguaje directamente resultó difícil, creamos **lenguajes de programación**: una forma más humana de comunicarnos con ellas.
 
@@ -13,20 +13,20 @@ Aunque hoy las máquinas son mucho más rápidas y poderosas, los principios par
 
 # 📚 Índice del Capítulo 2
 
-| Sección                                                                                                                                 | Descripción                                                                                                                                                          |
-| :-------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [✍️ Dibujando el lenguaje en un papel](#-dibujando-el-lenguaje-en-un-papel-✍️)                                                          | Cómo un boceto inicial se convierte en un mapa claro del programa.                                                                                                   |
-| [🔍 Escaneo (Scanning o Lexing)](#-escaneo-scanning-o-lexing)                                                                           | Primer paso: convertir texto crudo en tokens listos para el análisis.                                                                                                |
-| [👀 Qué es el escáner léxico (lexer)](#-qué-es-el-escáner-léxico-o-lexer)                                                               | Explicación de cómo el lexer organiza caracteres en bloques significativos.                                                                                          |
-| [🧩 Qué es un token](#-qué-es-un-token)                                                                                                 | Concepto de token y ejemplos prácticos de los distintos tipos.                                                                                                       |
-| [🔧 De texto a tokens: primer paso del compilador](#-de-texto-a-tokens-primer-paso-del-compilador)                                      | Cómo el lexer encaja en el proceso general del compilador.                                                                                                           |
-| [🌲 Análisis Sintáctico (Parsing)](#-análisis-sintáctico-parsing)                                                                       | Cómo los tokens se organizan en estructuras jerárquicas (AST).                                                                                                       |
-| [💬 Análisis Semántico: Entendiendo el Significado del Código](#-análisis-semántico-entendiendo-el-significado-del-código)              | Es la etapa donde el compilador verifica que el código esté bien escrito, tenga sentido lógico y coherente según las reglas del lenguaje.                            |
-| [🛠️ Representaciones Intermedias (Intermediate Representations – IR)](#️-representaciones-intermedias-intermediate-representations--ir) | Explica cómo se usa una forma intermedia de código para conectar el front end y el back end, facilitando optimización y soporte multi-lenguaje y multi-arquitectura. |
+| Sección                                                                                                                                      | Descripción                                                                                                                                                          |
+| :------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [1. ✍️ Dibujando el lenguaje en un papel](#1--️-dibujando-el-lenguaje-en-un-papel)                                                           | Cómo un boceto inicial se convierte en un mapa claro del programa.                                                                                                   |
+| [2. 🔍 Escaneo (Scanning o Lexing)](#2--escaneo-scanning-o-lexing)                                                                           | Primer paso: convertir texto crudo en tokens listos para el análisis.                                                                                                |
+| [3. 👀 ¿Qué es el escáner léxico (lexer)?](#3--qué-es-el-escáner-léxico-o-lexer)                                                             | Explicación de cómo el lexer organiza caracteres en bloques significativos.                                                                                          |
+| [4. 🧩 ¿Qué es un token?](#4--qué-es-un-token)                                                                                               | Concepto de token y ejemplos prácticos de los distintos tipos.                                                                                                       |
+| [5. 🔧 De texto a tokens: primer paso del compilador](#5--de-texto-a-tokens-primer-paso-del-compilador)                                      | Cómo el lexer encaja en el proceso general del compilador.                                                                                                           |
+| [6. 🌲 Análisis Sintáctico (Parsing)](#6--análisis-sintáctico-parsing)                                                                       | Cómo los tokens se organizan en estructuras jerárquicas (AST).                                                                                                       |
+| [7. 💬 Análisis Semántico: Entendiendo el Significado del Código](#7--análisis-semántico-entendiendo-el-significado-del-código)              | Es la etapa donde el compilador verifica que el código esté bien escrito, tenga sentido lógico y coherente según las reglas del lenguaje.                            |
+| [8. 🛠️ Representaciones Intermedias (Intermediate Representations – IR)](#8-️-representaciones-intermedias-intermediate-representations--ir) | Explica cómo se usa una forma intermedia de código para conectar el front end y el back end, facilitando optimización y soporte multi-lenguaje y multi-arquitectura. |
 
-<br/><br/><br/>
+<br/><hr/><br/>
 
-## Dibujando el lenguaje en un papel ✍️
+## 1. ✍️ Dibujando el lenguaje en un papel
 
 Pensemos que crear un lenguaje empieza como un **boceto**. Nada grandioso, solo una idea garabateada con entusiasmo.
 
@@ -42,9 +42,9 @@ Nuestro recorrido comienza con el **texto en bruto del código fuente** del usua
 
 A lo largo de la historia, hubo muchos intentos fallidos y caminos sin salida: ideas que parecían prometedoras, pero que el tiempo dejó atrás. Aun así, esos experimentos forman parte del mapa de la computación y nos recuerdan que incluso los errores ayudan a construir el conocimiento.
 
-<br/><br/><br/>
+<br/><hr/><br/>
 
-## 🔍 Escaneo (Scanning o Lexing)
+## 2. 🔍 Escaneo (Scanning o Lexing)
 
 El primer paso para entender el código es el **escaneo**, también llamado **análisis léxico**.
 
@@ -57,9 +57,9 @@ Al mismo tiempo, ignora lo que no aporta nada al código, como los **espacios en
 
 El resultado es una secuencia limpia y ordenada de tokens.
 
-<br/><br/><br/>
+<br/><hr/><br/>
 
-## 👇 Qué es el escáner léxico (o lexer)
+## 3. 👀 ¿Qué es el escáner léxico (o lexer)?
 
 Cuando escribes un programa, lo que tienes es texto plano: letras, números, signos y espacios.
 
@@ -77,9 +77,9 @@ v a r   s u m a   =   1 0   +   5 ;
 
 El escáner léxico (también llamado **lexer**) es el encargado de leer ese texto y darle estructura, separándolo en bloques con significado, llamados **tokens**.
 
-<br/><br/><br/>
+<br/><hr/><br/>
 
-## 🧩 Qué es un token
+## 4. 🧩 ¿Qué es un token?
 
 Un token es como una pequeña etiqueta que indica qué tipo de cosa representa una parte del código. Por ejemplo, el código anterior se convertiría en esta lista de tokens:
 
@@ -96,9 +96,9 @@ Un token es como una pequeña etiqueta que indica qué tipo de cosa representa u
 El escáner también puede guardar la posición (línea y columna) de cada token.
 Esto sirve para que, si hay un error, el compilador pueda decirte exactamente dónde ocurrió.
 
-<br/><br/><br/>
+<br/><hr/><br/>
 
-## 🔧 De texto a tokens: primer paso del compilador
+## 5. 🔧 De texto a tokens: primer paso del compilador
 
 El lexer es la primera etapa del proceso de compilación o interpretación:
 
@@ -112,9 +112,9 @@ Después, el **parser** (analizador sintáctico) toma esos tokens y los **organi
 
 Cada etapa se apoya en la anterior: el escaneo prepara el terreno, y el parser empieza a darle forma al código para que el lenguaje pueda interpretarlo o compilarlo correctamente
 
-<br/><br/><br/>
+<br/><hr/><br/>
 
-## 🌲 Análisis Sintáctico (Parsing)
+## 6. 🌲 Análisis Sintáctico (Parsing)
 
 El siguiente paso después del escaneo es el **parsing**, o análisis sintáctico.  
 Aquí es donde el código empieza a **tomar forma**: el parser entiende cómo juntar las piezas (tokens) para formar expresiones y sentencias más grandes.
@@ -139,9 +139,9 @@ Por lo tanto:
 > 💡 Sin parsing, el compilador vería solo una lista de símbolos sin sentido.  
 > Con él, el código **adquiere forma, jerarquía y lógica**, listo para ser entendido y procesado.
 
-<br/><br/><br/>
+<br/><hr/><br/>
 
-## 💬 Análisis Semántico: Entendiendo el Significado del Código
+## 7. 💬 Análisis Semántico: Entendiendo el Significado del Código
 
 > Hasta ahora, ya tenemos nuestro código dividido en tokens (gracias al lexer) y organizado en una estructura lógica (gracias al parser). Pero… ¿el programa tiene sentido? ❓
 
@@ -196,9 +196,9 @@ En otras palabras, el código no solo está bien escrito, sino que tiene lógica
 
 Sin análisis semántico, podríamos tener programas “bien escritos” pero completamente absurdos.
 
-<br/><br/><br/>
+<br/><hr/><br/>
 
-## 🛠️ Representaciones Intermedias (Intermediate Representations – IR)
+## 8. 🛠️ Representaciones Intermedias (Intermediate Representations – IR)
 
 Podemos imaginar el **compilador** como una tubería de trabajo donde cada etapa transforma el código del usuario en una forma más organizada y fácil de procesar 🏗️.
 
@@ -245,7 +245,7 @@ Luego, los back-ends específicos de cada arquitectura (x86, ARM, 68k, etc.) tra
 
 🌳 Una **IR compartida** funciona como un puente entre los front-ends y los back-ends, permitiendo combinar muchos lenguajes y arquitecturas sin crear compiladores desde cero 🔧💡.
 
-<br/><br/><br/>
+<br/><hr/><br/>
 
 | [↩️ Volver al inicio del Proyecto](../README.md) | [⬅️ Ir a Capítulo 1](../docs/01-Bienvenido.md) |
 | :----------------------------------------------: | :--------------------------------------------: |
