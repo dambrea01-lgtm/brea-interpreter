@@ -38,7 +38,7 @@ Este capítulo ofrece una **visión panorámica** de compiladores, intérpretes,
 
 <br/><hr/><br/>
 
-## 1. ✍️ Dibujando el lenguaje en un papel
+## 1. [✍️ Dibujando el lenguaje en un papel](#-índice-del-capítulo-2)
 
 Pensemos que crear un lenguaje empieza como un **boceto**. Nada grandioso, solo una idea garabateada con entusiasmo.
 
