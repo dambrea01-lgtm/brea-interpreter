@@ -34,7 +34,7 @@ Este capítulo ofrece una **visión panorámica** de compiladores, intérpretes,
 | [15. 🔄 Transpilador (Transpiler)](#15--transpilador-transpiler)                                                                             | Traducir código de un lenguaje a otro de alto nivel, usando el lenguaje destino como IR intermedia.                           |
 | [16. ✨ Compilación Just-in-Time (JIT)](#16--compilación-just-in-time-jit)                                                                   | Compilar al vuelo a código nativo, combinando portabilidad y rendimiento, con optimización dinámica de “hot spots”.           |
 | [17. 📚 Compiladores e Intérpretes (Compilers and Interpreters)](#17--compiladores-e-intérpretes-compilers-and-interpreters)                 | Diferencias entre compiladores e intérpretes, ejemplos y cómo los lenguajes modernos combinan ambos enfoques.                 |
-| [18. 📝 Ejercicio Propuesto](#18--ejercicio-propuesto-en-desarrollo)                                                                                       | Explora el código fuente de un intérprete o compilador open source para identificar cómo convierte el código en tokens y AST. |
+| [18. 📝 Ejercicio Propuesto](#18--ejercicio-propuesto-en-desarrollo)                                                                         | Explora el código fuente de un intérprete o compilador open source para identificar cómo convierte el código en tokens y AST. |
 
 <br/><hr/><br/>
 
@@ -449,11 +449,21 @@ Concluyo que:
 
 ## 18. 📝 Ejercicio Propuesto (en desarrollo)
 
-- Ejercio Propuesto 1: Explorando Scanners y Parsers
+- **Ejercio Propuesto 1: Explorando Scanners y Parsers**
 
   **Objetivo**: Familiarizarse con la implementación real de compiladores e intérpretes explorando código open source.
 
-  **Instrucciones**: Elige un lenguaje open source de tu preferencia. Por ejemplo, puedes usar uno de estos repositorios en GitHub: - [CPython (Python) – El intérprete oficial de Python en C](https://github.com/python/cpython) - [PyPy (Python JIT) – Implementación alternativa de Python con JIT](https://github.com/friendlyanon/pypy) - [MRI (Ruby) – Implementación oficial de Ruby (Matz’s Ruby Interpreter)](https://github.com/ruby/ruby) - [JRuby – Ruby sobre JVM](https://github.com/jruby/jruby) - [Lua – Lenguaje ligero, famoso por embebirse en juegos](https://github.com/lua/lua) - [GHC (Glasgow Haskell Compiler) – Compilador de Haskell](https://github.com/ghc/ghc) - [Go (golang) – Lenguaje de Google, compilador y runtime incluidos](https://github.com/golang/go) - [V (Vlang) – Lenguaje moderno, compilador muy sencillo de explorar](https://github.com/vlang/v) - [Crystal – Lenguaje tipo Ruby, compilado a código nativo](https://github.com/crystal-lang/crystal) - [Nim – Lenguaje moderno, compilado a C, C++ o JavaScript](https://github.com/nim-lang/Nim)
+  **Instrucciones**: Elige un lenguaje open source de tu preferencia. Por ejemplo, puedes usar uno de estos repositorios en GitHub:
+
+      - [CPython (Python) – El intérprete oficial de Python en C](https://github.com/python/cpython)
+      - [PyPy (Python JIT) – Implementación alternativa de Python con JIT](https://github.com/friendlyanon/pypy)
+      - [MRI (Ruby) – Implementación oficial de Ruby (Matz’s Ruby Interpreter)](https://github.com/ruby/ruby)
+      - [JRuby – Ruby sobre JVM](https://github.com/jruby/jruby)
+      - [Lua – Lenguaje ligero, famoso por embebirse en juegos](https://github.com/lua/lua) - [GHC (Glasgow Haskell Compiler) – Compilador de Haskell](https://github.com/ghc/ghc)
+      - [Go (golang) – Lenguaje de Google, compilador y runtime incluidos](https://github.com/golang/go)
+      - [V (Vlang) – Lenguaje moderno, compilador muy sencillo de explorar](https://github.com/vlang/v)
+      - [Crystal – Lenguaje tipo Ruby, compilado a código nativo](https://github.com/crystal-lang/crystal)
+      - [Nim – Lenguaje moderno, compilado a C, C++ o JavaScript](https://github.com/nim-lang/Nim)
 
   **Clona o descarga el repositorio en tu máquina**: Clonando con Git
   git clone https://github.com/python/cpython.git
