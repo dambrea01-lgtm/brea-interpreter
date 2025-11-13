@@ -1,54 +1,31 @@
 # Capítulo 1: Introducción al proyecto Brea 🧩
 
-<p align="center">
-  <a href="../README.md" style="
-    display:inline-block;
-    background-color:#007bff;
-    color:white;
-    padding:10px 15px;
-    border-radius:6px;
-    text-decoration:none;
-    font-weight:bold;
-    margin-right:10px;">
-    ↩️ Volver al inicio
-  </a>
+| [↩️ Volver al inicio del Proyecto](../README.md) | [➡️ Capítulo 2](../docs/02-PiezasDeUnLenguaje.md) |
+| :----------------------------------------------: | :-----------------------------------------------: |
 
-<a href="../docs/02-PiezasDeUnLenguaje.md" style="
-    display:inline-block;
-    background-color:#28a745;
-    color:white;
-    padding:10px 15px;
-    border-radius:6px;
-    text-decoration:none;
-    font-weight:bold;">
-➡️ Capítulo 2
-</a>
-
-</p>
-
-<br/><br/><br/>
+<br/><hr/><br/>
 
 Bienvenido al mundo de Brea. Este capítulo es la **puerta de entrada para comprender cómo funciona un lenguaje de programación desde cero** y cómo se construye un intérprete funcional en Java. Nuestro enfoque es **aprender haciendo**, entendiendo la teoría mientras desarrollamos código real.
 
-<br/><br/><br/>
+<br/><hr/><br/>
 
 # 📚 Índice del Capítulo
 
-| Sección                                                                                       | Descripción                                                     |
-| :-------------------------------------------------------------------------------------------- | :-------------------------------------------------------------- |
-| [🧩 Introducción](#-introducción)                                                             | Qué aprenderás en esta primera etapa y cuál es el objetivo.     |
-| [🤔 Por qué aprender a construir un intérprete](#-por-qué-aprender-a-construir-un-intérprete) | Razones para crear tu propio lenguaje e intérprete.             |
-| [☕ Nuestro primer intérprete: jBrea en Java](#-nuestro-primer-intérprete-jbrea-en-java)      | Primera versión del intérprete escrita en Java.                 |
-| [⚙️ Segunda fase: cBrea en C](#%E2%9A%99%EF%B8%8F-segunda-fase-cbrea-en-c)                    | Versión en C para comprender la ejecución a bajo nivel.         |
-| [🧪 El aprendizaje práctico](#-el-aprendizaje-práctico)                                       | Cómo combinaremos teoría, práctica y desafíos.                  |
-| [🔑 Conceptos clave a dominar](#-conceptos-clave-a-dominar)                                   | Diferencias entre intérprete y compilador, y conceptos básicos. |
-| [💡 Por qué es un gran ejercicio](#-por-qué-es-un-gran-ejercicio)                             | Qué habilidades ganarás al implementar un lenguaje.             |
-| [🧭 Resumen del capítulo](#%F0%9F%A7%AD-resumen-del-capítulo)                                 | Puntos más importantes que cubrimos.                            |
-| [✏️ Ejercicios propuestos](#%EF%B8%8F-ejercicios-propuestos)                                  | Enlaces a los ejercicios prácticos del capítulo.                |
+| Sección                                                                                            | Descripción                                                     |
+| :------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------- |
+| [1. 🧩 Introducción](#1--introducción)                                                             | Qué aprenderás en esta primera etapa y cuál es el objetivo.     |
+| [2. 🤔 Por qué aprender a construir un intérprete](#2--por-qué-aprender-a-construir-un-intérprete) | Razones para crear tu propio lenguaje e intérprete.             |
+| [3. ☕ Nuestro primer intérprete: jBrea en Java](#3--nuestro-primer-intérprete-jbrea-en-java)      | Primera versión del intérprete escrita en Java.                 |
+| [4. ⚙️ Segunda fase: cBrea en C](#4-️-segunda-fase-cbrea-en-c)                                     | Versión en C para comprender la ejecución a bajo nivel.         |
+| [5. 🧪 El aprendizaje práctico](#5--el-aprendizaje-práctico)                                       | Cómo combinaremos teoría, práctica y desafíos.                  |
+| [6. 🔑 Conceptos clave a dominar](#6--conceptos-clave-a-dominar)                                   | Diferencias entre intérprete y compilador, y conceptos básicos. |
+| [7. 💡 Por qué es un gran ejercicio](#7--por-qué-es-un-gran-ejercicio)                             | Qué habilidades ganarás al implementar un lenguaje.             |
+| [8. 🧭 Resumen del capítulo](#8--resumen-del-capítulo)                                             | Puntos más importantes que cubrimos.                            |
+| [9. ✏️ Ejercicios propuestos](#9-️-ejercicios-propuestos)                                          | Enlaces a los ejercicios prácticos del capítulo.                |
 
-<br/><br/><br/>
+<br/><hr/><br/>
 
-## 🧩 Introducción
+## 1. 🧩 Introducción
 
 En esta primera etapa vamos a:
 
@@ -58,9 +35,9 @@ En esta primera etapa vamos a:
 
 El objetivo es que al final es que tengamos **una visión clara de cómo un lenguaje vive y respira**, y que estés listo para empezar a programar tu propio intérprete.
 
-<br/><br/><br/>
+<br/><hr/><br/>
 
-## 🤔 Por qué aprender a construir un intérprete
+## 2. 🤔 Por qué aprender a construir un intérprete
 
 Crear un lenguaje puede parecer intimidante, pero pienso que es un **ejercicio extremadamente valioso** para cualquier programador, te enumero algunos motivos:
 
@@ -71,9 +48,9 @@ Crear un lenguaje puede parecer intimidante, pero pienso que es un **ejercicio e
 
 Incluso si no planeas crear un lenguaje de propósito general, los **lenguajes de dominio específico** están en todas partes: scripts de automatización, motores de plantillas, formatos de configuración y archivos de datos. Comprender cómo funcionan te permitirá **adaptarte y crear soluciones personalizadas cuando sea necesario**.
 
-<br/><br/><br/>
+<br/><hr/><br/>
 
-## ☕ Nuestro primer intérprete: jBrea en Java
+## 3. ☕ Nuestro primer intérprete: jBrea en Java
 
 Para empezar, construiremos **jBrea**, un intérprete simple en Java. La elección de Java tiene varias ventajas:
 
@@ -89,9 +66,9 @@ Nuestro objetivo inicial será un intérprete **correcto y comprensible**, dejan
 
 Este enfoque nos permitirá **ver claramente cómo cada parte del intérprete interactúa con las demás**, y cómo las decisiones de diseño afectan el comportamiento del lenguaje.
 
-<br/><br/><br/>
+<br/><hr/><br/>
 
-## ⚙️ Segunda fase cBrea en C
+## 4. ⚙️ Segunda fase cBrea en C
 
 Más adelante construiremos **cBrea**, la versión en C, con el objetivo de:
 
@@ -101,9 +78,9 @@ Más adelante construiremos **cBrea**, la versión en C, con el objetivo de:
 
 Mientras jBrea nos enseña la lógica y la claridad conceptual, cBrea nos permitirá **profundizar en eficiencia y control de ejecución**, mostrando cómo las máquinas realmente interpretan nuestro lenguaje.
 
-<br/><br/><br/>
+<br/><hr/><br/>
 
-## 🧪 El aprendizaje práctico
+## 5. 🧪 El aprendizaje práctico
 
 La mejor manera de entender un lenguaje es **interactuar con él**:
 
@@ -113,9 +90,9 @@ La mejor manera de entender un lenguaje es **interactuar con él**:
 
 Esta metodología asegura que **la comprensión no sea solo teórica**, sino basada en experiencias prácticas que nos preparan para proyectos más complejos.
 
-<br/><br/><br/>
+<br/><hr/><br/>
 
-## 🔑 Conceptos clave a dominar
+## 6. 🔑 Conceptos clave a dominar
 
 Antes de comenzar a programar, es importante familiarizarse con algunos conceptos esenciales:
 
@@ -134,9 +111,9 @@ Antes de comenzar a programar, es importante familiarizarse con algunos concepto
 
 > Estos conceptos son muy importante para que construyamos nuestro proyecto paso a paso.
 
-<br/><br/><br/>
+<br/><hr/><br/>
 
-## 💡 Por qué es un gran ejercicio
+## 7. 💡 Por qué es un gran ejercicio
 
 Implementar un lenguaje te obliga a:
 
@@ -146,17 +123,17 @@ Implementar un lenguaje te obliga a:
 
 A medida que avancemos, notaremos que el desafío **no está solo en escribir código**, sino en **tomar decisiones de diseño consciente**, equilibrando claridad, eficiencia y escalabilidad.
 
-<br/><br/><br/>
+<br/><hr/><br/>
 
-## 🧭 Resumen del capítulo
+## 8. 🧭 Resumen del capítulo
 
 - Comenzamos con **jBrea en Java**, centrándonos en claridad y comprensión.
 - Después construiremos **cBrea en C**, para aprender sobre eficiencia y control a nivel bajo.
 - Cada sección incluiré teoría, ejemplos y ejercicios prácticos, permitiéndote **aprender haciendo**.
 
-<br/><br/><br/>
+<br/><hr/><br/>
 
-## ✏️ Ejercicios propuestos
+## 9. ✏️ Ejercicios propuestos
 
 - [**Ejercicio Propuesto 1**](../ejercicios/tema-01/01-ejercicios.md)
 
@@ -166,13 +143,13 @@ A medida que avancemos, notaremos que el desafío **no está solo en escribir c�
 
 > 💬 Para practicar con punteros, define una lista doblemente enlazada de cadenas en el heap. Escribe funciones para insertar, buscar y eliminar elementos de la lista.
 
-<br/><br/><br/>
+<br/><hr/><br/>
 
 > ¡Felicidades! 🎉 Has completado tu primer vistazo a Brea.  
 > Antes de escribir código, exploraremos un **mapa del lenguaje** que todo lenguaje de programación debe recorrer: va desde el **código fuente**, pasando por **símbolos (tokens)**, el **árbol sintáctico (syntax tree)**, ... hasta llegar a nuestro **código de máquina o bytecode**.  
 > 🌟 No entraremos en detalle todavía, eso lo exploraremos paso a paso en la siguiente sección.
 
-<br/><br/><br/>
+<br/><hr/><br/>
 
-| [↩️ Volver al inicio del Proyecto](../README.md) | [➡️ Capítulo 2](../docs/02-PiezasDeUnLenguaje.md) |
-| :----------------------------------------------: | :-----------------------------------------------: |
+| [↩️ Volver al inicio del Proyecto](../README.md) | [⬆️ Ir al inicio del Capítulo](#capítulo-1-introducción-al-proyecto-brea-) | [➡️ Capítulo 2](../docs/02-PiezasDeUnLenguaje.md) |
+| :----------------------------------------------: | :------------------------------------------------------------------------: | :-----------------------------------------------: |

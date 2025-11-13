@@ -247,5 +247,5 @@ Luego, los back-ends específicos de cada arquitectura (x86, ARM, 68k, etc.) tra
 
 <br/><hr/><br/>
 
-| [↩️ Volver al inicio del Proyecto](../README.md) | [⬅️ Ir a Capítulo 1](../docs/01-Bienvenido.md) |
-| :----------------------------------------------: | :--------------------------------------------: |
+| [↩️ Volver al inicio del Proyecto](../README.md) | [⬆️ Ir al inicio del Capítulo](#capitulo-2-las-piezas-que-componen-un-lenguaje) | [⬅️ Ir a Capítulo 1](../docs/01-Bienvenido.md) |
+| :----------------------------------------------: | :-----------------------------------------------------------------------------: | :--------------------------------------------: |

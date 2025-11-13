@@ -42,7 +42,7 @@ Aquí no solo seguirás un tutorial, sino que **exploraremos juntos los fundamen
         - [ desarrollando ... ]
 ```
 
-<br/><br/><br/>
+<br/><hr/><br/>
 
 ## ¿Qué aprenderemos? 💻
 
@@ -55,7 +55,7 @@ El objetivo de este proyecto es que **comprendas cómo funciona un lenguaje desd
 
 > Todo esto será explicado con ejemplos claros y ejercicios prácticos, mostrando no solo _qué hacer_, sino _por qué funciona así_.
 
-<br/><br/><br/>
+<br/><hr/><br/>
 
 ## Enseñar para aprender 🎓
 
@@ -67,7 +67,7 @@ Una de las mejores maneras de **afianzar conocimientos** es explicarlos a otros.
 
 De esta manera, no solo construimos un intérprete funcional, sino que **creamos un recurso educativo** que refleja el aprendizaje práctico de la programación de lenguajes.
 
-<br/><br/><br/>
+<br/><hr/><br/>
 
 ## Estructura inicial de carpetas 📂
 
@@ -82,7 +82,7 @@ brea-interpreter/
 └── recursos/                  ← recursos del tutorial (imagenes, pdf, ...)
 ```
 
-<br/><br/><br/>
+<br/><hr/><br/>
 
 ## Recursos y referencias 📚
 
@@ -91,7 +91,7 @@ brea-interpreter/
 - Documentación oficial de Java y herramientas relacionadas.
 - Recursos visuales y diagramas para entender la teoría de intérpretes.
 
-<br/><br/><br/>
+<br/><hr/><br/>
 
 ## Próximo paso: Capítulo 2 (desarrollando) ✨
 
@@ -99,6 +99,6 @@ En el Capítulo 2 exploraremos el fascinante viaje que realizan todos los lengua
 
 Analizaremos cada una de las posibles rutas que puede tomar un lenguaje en su fase de creación, comprendiendo cómo las decisiones de diseño, compilación e interpretación moldean su identidad y comportamiento.
 
-<br/><br/><br/>
+<br/><hr/><br/>
 
 > Este es solo el comienzo. Cada capítulo siguiente incorporará **teoría y práctica**, y poco a poco construiremos un lenguaje completo y funcional, Brea.
