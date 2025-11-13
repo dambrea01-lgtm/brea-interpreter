@@ -13,15 +13,18 @@ Aunque hoy las máquinas son mucho más rápidas y poderosas, los principios par
 
 # 📚 Índice del Capítulo 2
 
-| Sección                                                                                                                    | Descripción                                                                                                                               |
-| :------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------- |
-| [✍️ Dibujando el lenguaje en un papel](#-dibujando-el-lenguaje-en-un-papel-✍️)                                             | Cómo un boceto inicial se convierte en un mapa claro del programa.                                                                        |
-| [🔍 Escaneo (Scanning o Lexing)](#-escaneo-scanning-o-lexing)                                                              | Primer paso: convertir texto crudo en tokens listos para el análisis.                                                                     |
-| [👀 Qué es el escáner léxico (lexer)](#-qué-es-el-escáner-léxico-o-lexer)                                                  | Explicación de cómo el lexer organiza caracteres en bloques significativos.                                                               |
-| [🧩 Qué es un token](#-qué-es-un-token)                                                                                    | Concepto de token y ejemplos prácticos de los distintos tipos.                                                                            |
-| [🔧 De texto a tokens: primer paso del compilador](#-de-texto-a-tokens-primer-paso-del-compilador)                         | Cómo el lexer encaja en el proceso general del compilador.                                                                                |
-| [🌲 Análisis Sintáctico (Parsing)](#-análisis-sintáctico-parsing)                                                          | Cómo los tokens se organizan en estructuras jerárquicas (AST).                                                                            |
-| [💬 Análisis Semántico: Entendiendo el Significado del Código](#-análisis-semántico-entendiendo-el-significado-del-código) | Es la etapa donde el compilador verifica que el código este bien escrito, tenga sentido lógico y coherente según las reglas del lenguaje. |
+# 📚 Índice del Capítulo 2
+
+| Sección                                                                                                                                 | Descripción                                                                                                                                                          |
+| :-------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [✍️ Dibujando el lenguaje en un papel](#-dibujando-el-lenguaje-en-un-papel-✍️)                                                          | Cómo un boceto inicial se convierte en un mapa claro del programa.                                                                                                   |
+| [🔍 Escaneo (Scanning o Lexing)](#-escaneo-scanning-o-lexing)                                                                           | Primer paso: convertir texto crudo en tokens listos para el análisis.                                                                                                |
+| [👀 Qué es el escáner léxico (lexer)](#-qué-es-el-escáner-léxico-o-lexer)                                                               | Explicación de cómo el lexer organiza caracteres en bloques significativos.                                                                                          |
+| [🧩 Qué es un token](#-qué-es-un-token)                                                                                                 | Concepto de token y ejemplos prácticos de los distintos tipos.                                                                                                       |
+| [🔧 De texto a tokens: primer paso del compilador](#-de-texto-a-tokens-primer-paso-del-compilador)                                      | Cómo el lexer encaja en el proceso general del compilador.                                                                                                           |
+| [🌲 Análisis Sintáctico (Parsing)](#-análisis-sintáctico-parsing)                                                                       | Cómo los tokens se organizan en estructuras jerárquicas (AST).                                                                                                       |
+| [💬 Análisis Semántico: Entendiendo el Significado del Código](#-análisis-semántico-entendiendo-el-significado-del-código)              | Es la etapa donde el compilador verifica que el código esté bien escrito, tenga sentido lógico y coherente según las reglas del lenguaje.                            |
+| [🛠️ Representaciones Intermedias (Intermediate Representations – IR)](#️-representaciones-intermedias-intermediate-representations--ir) | Explica cómo se usa una forma intermedia de código para conectar el front end y el back end, facilitando optimización y soporte multi-lenguaje y multi-arquitectura. |
 
 ---
 
@@ -185,7 +188,7 @@ Después de este paso, el compilador tiene un programa que:
 
 En otras palabras, el código no solo está bien escrito, sino que tiene lógica. Y con eso, ya está listo para pasar a las siguientes fases del viaje: la **generación de código** o la **interpretación** 🎯.
 
-### 💬 En resumen
+### 💬 Entonces, tenemos el siguiente camino recorrido:
 
 | Etapa         | Qué hace                  | Resultado                    |
 | :------------ | :------------------------ | :--------------------------- |
@@ -194,6 +197,55 @@ En otras palabras, el código no solo está bien escrito, sino que tiene lógica
 | **Semántico** | Verifica el significado   | ✅ Código coherente y válido |
 
 Sin análisis semántico, podríamos tener programas “bien escritos” pero completamente absurdos.
+
+---
+
+## 🛠️ Representaciones Intermedias (Intermediate Representations – IR)
+
+Podemos imaginar el **compilador** como una tubería de trabajo donde cada etapa transforma el código del usuario en una forma más organizada y fácil de procesar 🏗️.
+
+El **front-end** de esta tubería está ligado al lenguaje fuente (por ejemplo, Java, C o Python) 📜.
+
+El **back-end**, en cambio, se enfoca en la arquitectura destino (como x86, ARM o RISC-V) ⚙️.
+
+En el medio, el código pasa por una **representación intermedia (IR)**: una forma neutra que no depende del lenguaje original ni de la máquina final 🧩. Esta IR actúa como un puente entre ambos mundos, permitiendo que un compilador soporte múltiples lenguajes y plataformas con menos esfuerzo.
+
+💡 **Ejemplo**
+
+Supongamos que queremos crear compiladores para Pascal, C y Fortran, y que apunten a tres arquitecturas: x86, ARM y SPARC. Sin **IR**, tendrías que construir nueve compiladores completos (una combinación por cada caso) 😵‍💫.
+
+Con una **IR compartida**, solo necesitas:
+Un **front-end** por lenguaje (que genere la IR).
+Un **back-end** por arquitectura (que traduzca desde la IR).
+
+De esta forma, puedes mezclar y combinar libremente todas las combinaciones posibles.
+
+**🔧 Tipos comunes de IR**
+
+Existen varios estilos de representación intermedia que se usan ampliamente en compiladores modernos 📚: Control Flow Graph (CFG) 🌳 - Static Single Assignment (SSA) ✏️ - Continuation-Passing Style (CPS) 🔗 - Three-Address Code (TAC) 🧮
+
+Por lo tanto:
+📜 Lenguaje fuente → 🌳 Representación intermedia (IR) → 🖥️ Arquitectura objetivo
+
+La **representación intermedia (IR)** desacopla el front-end del back-end, haciendo el compilador modular, extensible y reutilizable. También permite aplicar optimizaciones independientes del lenguaje o la plataforma, lo que mejora la eficiencia general del programa.
+
+### 💡 Dato curioso: Soporte de múltiples lenguajes y arquitecturas en GCC
+
+- GCC significa GNU Compiler Collection: Es un conjunto de compiladores de código abierto desarrollado por el proyecto GNU que permite traducir programas escritos en varios lenguajes de programación a código máquina que pueda ejecutar una computadora.
+
+¿Alguna vez te preguntaste cómo GCC puede compilar tantos lenguajes para tantas arquitecturas distintas?
+
+La clave está en que todos los front-ends (C, C++, Ada, etc.) generan una **IR compartida** —como **GIMPLE o RTL**.
+
+Luego, los back-ends específicos de cada arquitectura (x86, ARM, 68k, etc.) traducen esa **IR a código nativo**.
+
+| Parte del compilador | Función principal                  | Ejemplo      |
+| :------------------- | :--------------------------------- | :----------- |
+| **Front-end**        | Traduce el lenguaje fuente a IR    | C → GIMPLE   |
+| **IR**               | Representación común y optimizable | GIMPLE / RTL |
+| **Back-end**         | Traduce IR a código máquina        | GIMPLE → x86 |
+
+🌳 Una **IR compartida** funciona como un puente entre los front-ends y los back-ends, permitiendo combinar muchos lenguajes y arquitecturas sin crear compiladores desde cero 🔧💡.
 
 ---
 
