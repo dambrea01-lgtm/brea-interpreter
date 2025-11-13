@@ -13,15 +13,15 @@ Aunque hoy las máquinas son mucho más rápidas y poderosas, los principios par
 
 # 📚 Índice del Capítulo 2
 
-| Sección                                                                                            | Descripción                                                                      |
-| :------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------- |
-| [✍️ Dibujando el lenguaje en un papel](#-dibujando-el-lenguaje-en-un-papel-✍️)                     | Cómo un boceto inicial se convierte en un mapa claro del programa.               |
-| [🔍 Escaneo (Scanning o Lexing)](#-escaneo-scanning-o-lexing)                                      | Primer paso: convertir texto crudo en tokens listos para el análisis.            |
-| [👀 Qué es el escáner léxico (lexer)](#-qué-es-el-escáner-léxico-o-lexer)                          | Explicación de cómo el lexer organiza caracteres en bloques significativos.      |
-| [🧩 Qué es un token](#-qué-es-un-token)                                                            | Concepto de token y ejemplos prácticos de los distintos tipos.                   |
-| [🔧 De texto a tokens: primer paso del compilador](#-de-texto-a-tokens-primer-paso-del-compilador) | Cómo el lexer encaja en el proceso general del compilador.                       |
-| [🌲 Análisis Sintáctico (Parsing)](#-análisis-sintáctico-parsing)                                  | Cómo los tokens se organizan en estructuras jerárquicas (AST).                   |
-| [💡 Apunte técnico](#-apunte-técnico)                                                              | Detalles técnicos sobre el parsing y su importancia para las etapas posteriores. |
+| Sección                                                                                                                    | Descripción                                                                                                                               |
+| :------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------- |
+| [✍️ Dibujando el lenguaje en un papel](#-dibujando-el-lenguaje-en-un-papel-✍️)                                             | Cómo un boceto inicial se convierte en un mapa claro del programa.                                                                        |
+| [🔍 Escaneo (Scanning o Lexing)](#-escaneo-scanning-o-lexing)                                                              | Primer paso: convertir texto crudo en tokens listos para el análisis.                                                                     |
+| [👀 Qué es el escáner léxico (lexer)](#-qué-es-el-escáner-léxico-o-lexer)                                                  | Explicación de cómo el lexer organiza caracteres en bloques significativos.                                                               |
+| [🧩 Qué es un token](#-qué-es-un-token)                                                                                    | Concepto de token y ejemplos prácticos de los distintos tipos.                                                                            |
+| [🔧 De texto a tokens: primer paso del compilador](#-de-texto-a-tokens-primer-paso-del-compilador)                         | Cómo el lexer encaja en el proceso general del compilador.                                                                                |
+| [🌲 Análisis Sintáctico (Parsing)](#-análisis-sintáctico-parsing)                                                          | Cómo los tokens se organizan en estructuras jerárquicas (AST).                                                                            |
+| [💬 Análisis Semántico: Entendiendo el Significado del Código](#-análisis-semántico-entendiendo-el-significado-del-código) | Es la etapa donde el compilador verifica que el código este bien escrito, tenga sentido lógico y coherente según las reglas del lenguaje. |
 
 ---
 
@@ -122,8 +122,6 @@ Un **parser** toma la secuencia de tokens y la organiza en una **estructura jer�
 
 Para nosotros, lo importante es entender que **el parser da forma y sentido al código**, y nos permite trabajar con él de manera ordenada.
 
----
-
 ### 💡 Apunte técnico
 
 El parser **convierte la lista de tokens** en una **estructura organizada** (AST = “árbol de sintaxis abstracta” o "abstract syntax tree") que refleja la lógica y jerarquía del programa.  
@@ -148,10 +146,10 @@ Por lo tanto:
 
 Por ejemplo, mira este código:
 
-´´´javascript
+```javascript
 var x = "hola";
 x = x + 10;
-´´´
+```
 
 El parser no ve ningún problema aquí: la estructura está bien. Pero, desde el punto de vista del significado, algo está mal. ¡Estamos intentando sumar un número a una cadena de texto! Y ahí es donde entra en juego el análisis semántico.
 

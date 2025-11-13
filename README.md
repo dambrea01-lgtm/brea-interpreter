@@ -37,6 +37,7 @@ Aquí no solo seguirás un tutorial, sino que **exploraremos juntos los fundamen
         - [🧩 Qué es un token]
         - [🔧 De texto a tokens: primer paso del compilador]
         - [🌲 Análisis Sintáctico (Parsing)]
+        - [💬 Análisis Semántico: Entendiendo el Significado del Código]
         - [ desarrollando ... ]
 ```
 
