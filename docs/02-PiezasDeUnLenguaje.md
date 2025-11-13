@@ -15,25 +15,26 @@ Este capítulo ofrece una **visión panorámica** de compiladores, intérpretes,
 
 # 📚 Índice del Capítulo 2
 
-| Sección                                                                                                                                      | Descripción                                                                                                         |
-| :------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------ |
-| [1. ✍️ Dibujando el lenguaje en un papel](#1--️-dibujando-el-lenguaje-en-un-papel)                                                           | Cómo un boceto inicial se convierte en un mapa claro del programa.                                                  |
-| [2. 🔍 Escaneo (Scanning o Lexing)](#2--escaneo-scanning-o-lexing)                                                                           | Primer paso: convertir texto crudo en tokens listos para el análisis.                                               |
-| [3. 👀 ¿Qué es el escáner léxico (lexer)?](#3--qué-es-el-escáner-léxico-o-lexer)                                                             | Explicación de cómo el lexer organiza caracteres en bloques significativos.                                         |
-| [4. 🧩 ¿Qué es un token?](#4--qué-es-un-token)                                                                                               | Concepto de token y ejemplos prácticos de los distintos tipos.                                                      |
-| [5. 🔧 De texto a tokens: primer paso del compilador](#5--de-texto-a-tokens-primer-paso-del-compilador)                                      | Cómo el lexer encaja en el proceso general del compilador.                                                          |
-| [6. 🌲 Análisis Sintáctico (Parsing)](#6--análisis-sintáctico-parsing)                                                                       | Cómo los tokens se organizan en estructuras jerárquicas (AST).                                                      |
-| [7. 💬 Análisis Semántico: Entendiendo el Significado del Código](#7--análisis-semántico-entendiendo-el-significado-del-código)              | Verifica que el programa tenga sentido lógico y coherente según las reglas del lenguaje.                            |
-| [8. 🛠️ Representaciones Intermedias (Intermediate Representations – IR)](#8-️-representaciones-intermedias-intermediate-representations--ir) | Forma intermedia de código que conecta el front end y back end, facilitando optimización y soporte multi-lenguaje.  |
-| [9. ⚡ Optimización (Optimization)](#9--optimización-optimization)                                                                           | Cómo mejorar el código para que sea más rápido o eficiente sin cambiar su funcionamiento.                           |
-| [10. 💻 Generación de Código (Code Generation)](#10--generación-de-código-code-generation)                                                   | Convertir la representación intermedia optimizada en instrucciones que la máquina pueda ejecutar.                   |
-| [11. 🖥️ Máquina Virtual (Virtual Machine – VM)](#11--máquina-virtual-virtual-machine--vm)                                                    | Ejecutar bytecode en una máquina virtual o generar mini-compiladores para cada arquitectura.                        |
-| [12. ⏱️ Tiempo de Ejecución (Runtime)](#12--tiempo-de-ejecución-runtime)                                                                     | Servicios necesarios durante la ejecución, como garbage collector, rastreo de tipos y librerías estándar.           |
-| [13. 🛣️ Atajos y rutas alternativas](#13--atajos-y-rutas-alternativas)                                                                       | Compiladores de un solo paso y traducción dirigida por la sintaxis para simplificar el pipeline de compilación.     |
-| [14. 🌳 Intérpretes de recorrido de árbol (Tree-walk interpreters)](#14--intérpretes-de-recorrido-de-árbol-tree-walk-interpreters)           | Ejecutar directamente el AST, ideal para lenguajes educativos o proyectos pequeños, aunque lento.                   |
-| [15. 🔄 Transpilador (Transpiler)](#15--transpilador-transpiler)                                                                             | Traducir código de un lenguaje a otro de alto nivel, usando el lenguaje destino como IR intermedia.                 |
-| [16. ✨ Compilación Just-in-Time (JIT)](#16--compilación-just-in-time-jit)                                                                   | Compilar al vuelo a código nativo, combinando portabilidad y rendimiento, con optimización dinámica de “hot spots”. |
-| [17. 📚 Compiladores e Intérpretes (Compilers and Interpreters)](#17--compiladores-e-intérpretes-compilers-and-interpreters)                 | Diferencias entre compiladores e intérpretes, ejemplos y cómo los lenguajes modernos combinan ambos enfoques.       |
+| Sección                                                                                                                                      | Descripción                                                                                                                   |
+| :------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------- |
+| [1. ✍️ Dibujando el lenguaje en un papel](#1-️-dibujando-el-lenguaje-en-un-papel)                                                            | Cómo un boceto inicial se convierte en un mapa claro del programa.                                                            |
+| [2. 🔍 Escaneo (Scanning o Lexing)](#2--escaneo-scanning-o-lexing)                                                                           | Primer paso: convertir texto crudo en tokens listos para el análisis.                                                         |
+| [3. 👀 ¿Qué es el escáner léxico (lexer)?](#3--qué-es-el-escáner-léxico-o-lexer)                                                             | Explicación de cómo el lexer organiza caracteres en bloques significativos.                                                   |
+| [4. 🧩 ¿Qué es un token?](#4--qué-es-un-token)                                                                                               | Concepto de token y ejemplos prácticos de los distintos tipos.                                                                |
+| [5. 🔧 De texto a tokens: primer paso del compilador](#5--de-texto-a-tokens-primer-paso-del-compilador)                                      | Cómo el lexer encaja en el proceso general del compilador.                                                                    |
+| [6. 🌲 Análisis Sintáctico (Parsing)](#6--análisis-sintáctico-parsing)                                                                       | Cómo los tokens se organizan en estructuras jerárquicas (AST).                                                                |
+| [7. 💬 Análisis Semántico: Entendiendo el Significado del Código](#7--análisis-semántico-entendiendo-el-significado-del-código)              | Verifica que el programa tenga sentido lógico y coherente según las reglas del lenguaje.                                      |
+| [8. 🛠️ Representaciones Intermedias (Intermediate Representations – IR)](#8-️-representaciones-intermedias-intermediate-representations--ir) | Forma intermedia de código que conecta el front end y back end, facilitando optimización y soporte multi-lenguaje.            |
+| [9. ⚡ Optimización (Optimization)](#9--optimización-optimization)                                                                           | Cómo mejorar el código para que sea más rápido o eficiente sin cambiar su funcionamiento.                                     |
+| [10. 💻 Generación de Código (Code Generation)](#10--generación-de-código-code-generation)                                                   | Convertir la representación intermedia optimizada en instrucciones que la máquina pueda ejecutar.                             |
+| [11. 🖥️ Máquina Virtual (Virtual Machine – VM)](#11-️-máquina-virtual-virtual-machine--vm)                                                   | Ejecutar bytecode en una máquina virtual o generar mini-compiladores para cada arquitectura.                                  |
+| [12. ⏱️ Tiempo de Ejecución (Runtime)](#12-️-tiempo-de-ejecución-runtime)                                                                    | Servicios necesarios durante la ejecución, como garbage collector, rastreo de tipos y librerías estándar.                     |
+| [13. 🛣️ Atajos y rutas alternativas](#13-️-atajos-y-rutas-alternativas)                                                                      | Compiladores de un solo paso y traducción dirigida por la sintaxis para simplificar el pipeline de compilación.               |
+| [14. 🌳 Intérpretes de recorrido de árbol (Tree-walk interpreters)](#14--intérpretes-de-recorrido-de-árbol-tree-walk-interpreters)           | Ejecutar directamente el AST, ideal para lenguajes educativos o proyectos pequeños, aunque lento.                             |
+| [15. 🔄 Transpilador (Transpiler)](#15--transpilador-transpiler)                                                                             | Traducir código de un lenguaje a otro de alto nivel, usando el lenguaje destino como IR intermedia.                           |
+| [16. ✨ Compilación Just-in-Time (JIT)](#16--compilación-just-in-time-jit)                                                                   | Compilar al vuelo a código nativo, combinando portabilidad y rendimiento, con optimización dinámica de “hot spots”.           |
+| [17. 📚 Compiladores e Intérpretes (Compilers and Interpreters)](#17--compiladores-e-intérpretes-compilers-and-interpreters)                 | Diferencias entre compiladores e intérpretes, ejemplos y cómo los lenguajes modernos combinan ambos enfoques.                 |
+| [18. 📝 Ejercicio Propuesto](#18--ejercicio-propuesto)                                                                                       | Explora el código fuente de un intérprete o compilador open source para identificar cómo convierte el código en tokens y AST. |
 
 <br/><hr/><br/>
 
@@ -443,6 +444,32 @@ Concluyo que:
 - **Intérprete = ejecuta desde el código fuente**
 
 - **Lenguajes modernos = mezcla de ambos**
+
+<br/><hr/><br/>
+
+## 18. 📝 Ejercicio Propuesto: (en desarrollo la resolución)
+
+- Ejercio Propuesto 1: Explorando Scanners y Parsers
+
+  **Objetivo**: Familiarizarse con la implementación real de compiladores e intérpretes explorando código open source.
+
+  **Instrucciones**: Elige un lenguaje open source de tu preferencia. Por ejemplo, puedes usar uno de estos repositorios en GitHub: - [CPython (Python) – El intérprete oficial de Python en C](https://github.com/python/cpython) - [PyPy (Python JIT) – Implementación alternativa de Python con JIT](https://github.com/friendlyanon/pypy) - [MRI (Ruby) – Implementación oficial de Ruby (Matz’s Ruby Interpreter)](https://github.com/ruby/ruby) - [JRuby – Ruby sobre JVM](https://github.com/jruby/jruby) - [Lua – Lenguaje ligero, famoso por embebirse en juegos](https://github.com/lua/lua) - [GHC (Glasgow Haskell Compiler) – Compilador de Haskell](https://github.com/ghc/ghc) - [Go (golang) – Lenguaje de Google, compilador y runtime incluidos](https://github.com/golang/go) - [V (Vlang) – Lenguaje moderno, compilador muy sencillo de explorar](https://github.com/vlang/v) - [Crystal – Lenguaje tipo Ruby, compilado a código nativo](https://github.com/crystal-lang/crystal) - [Nim – Lenguaje moderno, compilado a C, C++ o JavaScript](https://github.com/nim-lang/Nim)
+
+  **Clona o descarga el repositorio en tu máquina**: Clonando con Git
+  git clone https://github.com/python/cpython.git
+  O descargando el ZIP desde la página de GitHub y descomprimiéndolo
+
+  **Explora la estructura de carpetas del repositorio**. Busca carpetas o archivos relacionados con: parser - lexer - scanner - tokenizer - Grammar. Ahí suele estar la magia que convierte el código fuente en tokens y AST.
+
+  **Investiga cómo se implementan:**
+  ¿Qué significan Lex y Yacc?
+  En el lenguaje que estás investigando, ¿existen archivos con extensión .l o .y? Eso te indicará si usan Lex/Yacc para generar el scanner y parser.
+
+  **Responde las siguientes preguntas:**
+  ¿Cómo organiza el lenguaje el escaneo y parsing del código fuente?
+  ¿Qué tipo de archivos usa para definir la gramática o las reglas del lexer?
+  ¿Puedes identificar la función que recibe el texto y devuelve los tokens?
+  ¿Puedes identificar la función que construye el AST?
 
 <br/><hr/><br/>
 
