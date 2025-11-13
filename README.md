@@ -48,6 +48,7 @@ Aquí no solo seguirás un tutorial, sino que **exploraremos juntos los fundamen
         - [🔄 Transpilador (Transpiler)]
         - [✨ Compilación Just-in-Time (JIT)]
         - [📚 Compiladores e Intérpretes (Compilers and Interpreters)]
+        - [📝 Ejercicio Propuesto]
 ```
 
 <br/><hr/><br/>

@@ -34,7 +34,7 @@ Este capítulo ofrece una **visión panorámica** de compiladores, intérpretes,
 | [15. 🔄 Transpilador (Transpiler)](#15--transpilador-transpiler)                                                                             | Traducir código de un lenguaje a otro de alto nivel, usando el lenguaje destino como IR intermedia.                           |
 | [16. ✨ Compilación Just-in-Time (JIT)](#16--compilación-just-in-time-jit)                                                                   | Compilar al vuelo a código nativo, combinando portabilidad y rendimiento, con optimización dinámica de “hot spots”.           |
 | [17. 📚 Compiladores e Intérpretes (Compilers and Interpreters)](#17--compiladores-e-intérpretes-compilers-and-interpreters)                 | Diferencias entre compiladores e intérpretes, ejemplos y cómo los lenguajes modernos combinan ambos enfoques.                 |
-| [18. 📝 Ejercicio Propuesto](#18--ejercicio-propuesto)                                                                                       | Explora el código fuente de un intérprete o compilador open source para identificar cómo convierte el código en tokens y AST. |
+| [18. 📝 Ejercicio Propuesto](#18--ejercicio-propuesto-en-desarrollo)                                                                                       | Explora el código fuente de un intérprete o compilador open source para identificar cómo convierte el código en tokens y AST. |
 
 <br/><hr/><br/>
 
@@ -447,7 +447,7 @@ Concluyo que:
 
 <br/><hr/><br/>
 
-## 18. 📝 Ejercicio Propuesto: (en desarrollo la resolución)
+## 18. 📝 Ejercicio Propuesto (en desarrollo)
 
 - Ejercio Propuesto 1: Explorando Scanners y Parsers
 
