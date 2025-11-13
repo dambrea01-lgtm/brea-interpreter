@@ -39,7 +39,15 @@ Aquí no solo seguirás un tutorial, sino que **exploraremos juntos los fundamen
         - [🌲 Análisis Sintáctico (Parsing)]
         - [💬 Análisis Semántico: Entendiendo el Significado del Código]
         - [🛠️ Representaciones Intermedias (Intermediate Representations – IR)]
-        - [ desarrollando ... ]
+        - [⚡ Optimización (Optimization)]
+        - [💻 Generación de Código (Code Generation)]
+        - [🖥️ Máquina Virtual (Virtual Machine – VM)]
+        - [⏱️ Tiempo de Ejecución (Runtime)]
+        - [🛣️ Atajos y rutas alternativas]
+        - [🌳 Intérpretes de recorrido de árbol (Tree-walk interpreters)]
+        - [🔄 Transpilador (Transpiler)]
+        - [✨ Compilación Just-in-Time (JIT)]
+        - [📚 Compiladores e Intérpretes (Compilers and Interpreters)]
 ```
 
 <br/><hr/><br/>
