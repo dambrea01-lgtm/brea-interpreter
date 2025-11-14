@@ -449,7 +449,7 @@ Concluyo que:
 
 ## 18. [📝 Ejercicio Propuesto (en desarrollo)](#-índice-del-capítulo-2)
 
-- **Ejercio Propuesto 1: Explorando Scanners y Parsers**
+- [**Ejercio Propuesto 1: Explorando Scanners y Parsers**](../ejercicios/tema-02/01-ejercicios.md)
 
   **Objetivo**: Familiarizarse con la implementación real de compiladores e intérpretes explorando código open source.
 
