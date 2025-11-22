@@ -51,6 +51,12 @@ Aquí no solo seguirás un tutorial, sino que **exploraremos juntos los fundamen
         - [📝 Ejercicio Propuesto]
 ```
 
+### 📘 [3. El inicio del Interprete (Scanning) ](docs/03-ElInicioDelInterprete.md)
+
+```text
+        -[ 🛠️ ... (desarrollando) ]
+```
+
 <br/><hr/><br/>
 
 ## ¿Qué aprenderemos? 💻

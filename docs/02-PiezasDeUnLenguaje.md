@@ -1,7 +1,7 @@
 # Capitulo 2: Las piezas que componen un lenguaje
 
-| [↩️ Volver al inicio del Proyecto](../README.md) | [⬅️ Ir a Capítulo 1](../docs/01-Bienvenido.md) |
-| :----------------------------------------------: | :--------------------------------------------: |
+| [↩️ Volver al inicio del Proyecto](../README.md) | [⬅️ Ir a Capítulo 1](../docs/01-Bienvenido.md) | [➡️ Ir a Capítulo 3](../docs/03-ElInicioDelInterprete.md) |
+| :----------------------------------------------: | :--------------------------------------------: | :-------------------------------------------------------: |
 
 <br/><hr/><br/>
 
@@ -483,5 +483,5 @@ Concluyo que:
 
 <br/><hr/><br/>
 
-| [↩️ Volver al inicio del Proyecto](../README.md) | [⬆️ Ir al inicio del Capítulo](#capitulo-2-las-piezas-que-componen-un-lenguaje) | [⬅️ Ir a Capítulo 1](../docs/01-Bienvenido.md) |
-| :----------------------------------------------: | :-----------------------------------------------------------------------------: | :--------------------------------------------: |
+| [↩️ Volver al inicio del Proyecto](../README.md) | [⬅️ Ir a Capítulo 1](../docs/01-Bienvenido.md) | [⬆️ Ir al inicio del Capítulo](#-índice-del-capítulo-2) | [➡️ Ir a Capítulo 3](../docs/03-ElInicioDelInterprete.md) |
+| :----------------------------------------------: | :--------------------------------------------: | :-----------------------------------------------------: | :-------------------------------------------------------: |
