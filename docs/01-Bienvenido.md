@@ -11,17 +11,19 @@ Bienvenido al mundo de Brea. Este capítulo es la **puerta de entrada para compr
 
 # 📚 Índice del Capítulo
 
-| Sección                                                                                            | Descripción                                                     |
-| :------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------- |
-| [1. 🧩 Introducción](#1--introducción)                                                             | Qué aprenderás en esta primera etapa y cuál es el objetivo.     |
-| [2. 🤔 Por qué aprender a construir un intérprete](#2--por-qué-aprender-a-construir-un-intérprete) | Razones para crear tu propio lenguaje e intérprete.             |
-| [3. ☕ Nuestro primer intérprete: jBrea en Java](#3--nuestro-primer-intérprete-jbrea-en-java)      | Primera versión del intérprete escrita en Java.                 |
-| [4. ⚙️ Segunda fase: cBrea en C](#4-️-segunda-fase-cbrea-en-c)                                     | Versión en C para comprender la ejecución a bajo nivel.         |
-| [5. 🧪 El aprendizaje práctico](#5--el-aprendizaje-práctico)                                       | Cómo combinaremos teoría, práctica y desafíos.                  |
-| [6. 🔑 Conceptos clave a dominar](#6--conceptos-clave-a-dominar)                                   | Diferencias entre intérprete y compilador, y conceptos básicos. |
-| [7. 💡 Por qué es un gran ejercicio](#7--por-qué-es-un-gran-ejercicio)                             | Qué habilidades ganarás al implementar un lenguaje.             |
-| [8. 🧭 Resumen del capítulo](#8--resumen-del-capítulo)                                             | Puntos más importantes que cubrimos.                            |
-| [9. ✏️ Ejercicios propuestos](#9-️-ejercicios-propuestos)                                          | Enlaces a los ejercicios prácticos del capítulo.                |
+| Sección                                                                                                        | Descripción                                                                             |
+| :------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------- |
+| [1. 🧩 Introducción](#1--introducción)                                                                         | Qué aprenderás en esta primera etapa y cuál es el objetivo.                             |
+| [2. 🤔 Por qué aprender a construir un intérprete](#2--por-qué-aprender-a-construir-un-intérprete)             | Razones para crear tu propio lenguaje e intérprete.                                     |
+| [3. ☕ Nuestro primer intérprete: jBrea en Java](#3--nuestro-primer-intérprete-jbrea-en-java)                  | Primera versión del intérprete escrita en Java.                                         |
+| [4. ⚙️ Segunda fase: cBrea en C](#4-️-segunda-fase-cbrea-en-c)                                                 | Versión en C para comprender la ejecución a bajo nivel.                                 |
+| [5. 🧪 El aprendizaje práctico](#5--el-aprendizaje-práctico)                                                   | Cómo combinaremos teoría, práctica y desafíos.                                          |
+| [6. 🔑 Conceptos clave a dominar](#6--conceptos-clave-a-dominar)                                               | Diferencias entre intérprete y compilador, lexing, parsing y runtime.                   |
+| [7. 💻 Primer vistazo al lenguaje Brea y tipos de datos](#7--primer-vistazo-al-lenguaje-brea-y-tipos-de-datos) | Introducción al lenguaje Brea, tipado dinámico y tipos de datos básicos.                |
+| [8. ⚡ Expresiones, operadores y control de flujo](#8--expresiones-operadores-y-control-de-flujo)              | Cómo combinar variables y operadores, estructuras de control y bloques.                 |
+| [9. 🛠️ Funciones, closures y clases](#9️-funciones-closures-y-clases)                                          | Creación de funciones, closures, clases y herencia con `<`.                             |
+| [10. 💡 Lo que aprenderás creando un lenguaje](#10--lo-que-aprenderás-creando-un-lenguaje)                     | Qué habilidades y conocimientos profundos adquirirás al implementar un lenguaje propio. |
+| [11. ✏️ Ejercicios propuestos](#11-️-ejercicios-propuestos)                                                    | Actividades y desafíos prácticos para reforzar lo aprendido en este capítulo.           |
 
 <br/><hr/><br/>
 
@@ -113,27 +115,300 @@ Antes de comenzar a programar, es importante familiarizarse con algunos concepto
 
 <br/><hr/><br/>
 
-## 7. [💡 Por qué es un gran ejercicio](#-índice-del-capítulo)
+## 7. [💻 Primer vistazo al lenguaje Brea y tipos de datos](#-índice-del-capítulo)
+
+Vamos a explorar un poco el **lenguaje Brea** en sí y sus elementos fundamentales. Esta sección te ayudará a sentirte cómodo con los bloques de construcción de **Brea** antes de empezar a escribir tu intérprete.
+
+<br/>
+
+### Tipado dinámico en Brea
+
+**Brea** es un lenguaje **dinámicamente tipado**, lo que significa que no necesitas declarar el tipo de tus variables, y puedes **cambiar el tipo de dato** de una variable **durante la ejecución**. Esto hace que programar sea más ágil y menos rígido:
+
+```javascript
+var miVariable = 88; // empieza como número
+miVariable = "Ahora he cambiado y soy un texto"; // ahora es cadena
+```
+
+Esto es genial para aprender rápido y experimentar, pero recuerda que ⚠️ **los errores de tipo** solo aparecerán en **tiempo de ejecución**, no mientras escribes el código.
+
+<br/>
+
+### Tipos de datos básicos
+
+En **Brea**, los tipos de datos incorporados son pocos y simples. ¡Perfectos para comenzar a construir nuestro lenguaje sin complicaciones! 🎯:
+
+- **Booleanos: true y false**. Representan decisiones lógicas y control de flujo.
+
+```javascript
+var esEstudiante = true;
+var tieneExamen = false;
+```
+
+- **Números**: Todos son de **punto flotante de doble precisión**, así que no tienes que preocuparte por enteros, hexadecimales o notaciones raras.
+
+```javascript
+var edad = 21;
+var promedio = 12.5;
+```
+
+- **Cadenas (Strings)**: Textos entre comillas dobles. Pueden contener cualquier carácter.
+
+```javascript
+var nombre = "Brea";
+var mensaje = "Hola, " + nombre;
+```
+
+- **nulo**: Representa "ningún valor", algo así como **null** en otros lenguajes.
+
+```javascript
+var indefinido;
+print indefinido; // nulo
+```
+
+En Brea, **nulo** siempre aparece cuando no hay un valor asignado. Esto evita errores de punteros nulos al estilo C, pero ten cuidado de no asumir que una variable contiene un valor válido.
+
+<br/><hr/><br/>
+
+## 8. [⚡ Expresiones, operadores y control de flujo](#-índice-del-capítulo)
+
+Una vez que entendemos los tipos de datos, podemos combinarlos en expresiones para realizar cálculos y decisiones lógicas.
+
+<br/>
+
+### Operadores básicos
+
+- **Aritmética**: + - \* /
+
+```javascript
+   var a = 6;
+   var b = 2;
+   print a + b;  // 8
+   print a - b;  // 4
+   print a * b;  // 12
+   print a / b;  // 3.0
+```
+
+- **Negación**: - también funciona como prefijo para negar valores.
+
+```javascript
+   var negativo = -10;
+   print negativo; // -10
+```
+
+- **Concatenación de cadenas**: +
+
+```javascript
+var saludo = "Hola, " + "mundo!";
+print saludo; // "Hola, mundo!"
+```
+
+- **Comparación y lógica**: < <= > >= == != ! and or. Decir que and y or usan short-circuit, evaluando solo lo necesario para no entrar en asuntos complejos:
+
+```javascript
+   true and false;  // false
+   false or true;   // true
+```
+
+### Sentencias y bloques
+
+Mientras que las expresiones devuelven valores, las sentencias producen efectos: muestran información, cambian variables, o controlan el flujo.
+
+```javascript
+   print "¡Hola, estudiante!";
+   var x = 5;
+   x = x + 1;
+```
+
+Para agrupar varias sentencias usamos bloques:
+
+```javascript
+   {
+      print "Primera sentencia dentro de un bloque";
+      print "Segunda sentencia dentro de un bloque";
+   }
+```
+
+Los **bloques** también definen **alcance local** para las **variables**, algo muy importante cuando manejamos funciones y objetos.
+
+### Control de flujo
+
+**Brea** tiene estructuras de control típicas que ya conoces de C o Java:
+
+```javascript
+   // If-else
+   if(x > 0){
+      print "Positivo";
+   }else{
+      print "Cero o negativo";
+   }
+
+   // While
+   var contador = 0;
+   while(contador < 3){
+      print contador;
+      contador = contador + 1;
+   }
+
+   // For
+   for(var i = 0; i < 3; i = i + 1){
+      print i;
+   }
+```
+
+Si solo tuviéramos and, or y recursión, podríamos hacer todo el control de flujo, pero los bucles y el if hacen la vida mucho más fácil.
+
+<br/><hr/><br/>
+
+## 9.[🛠️ Funciones, closures y clases](#-índice-del-capítulo)
+
+Ahora viene la parte más divertida: **funciones y objetos**. Estas son las piezas que hacen que **Brea** sea más que un simple lenguaje de scripting.
+
+### Funciones y closures
+
+En **Brea**, las **funciones** son valores de **primera clase**, lo que significa que podemos:
+
+- Guardarlas en variables.
+- Pasarlas como argumentos.
+- Devolverlas desde otras funciones.
+
+```javascript
+   fun sumar(a, b){
+      return a + b;
+   }
+
+   fun usarFuncion(f){
+      print f(2, 3);
+   }
+
+   usarFuncion(sumar); // imprime 5
+```
+
+Si declaramos **funciones dentro de otras funciones**, creamos **closures** que "capturan" variables del entorno externo:
+
+```javascript
+   fun crearSaludo(nombre){
+      fun saludar(){
+         print "Hola, " + nombre + "!";
+      }
+      return saludar;
+   }
+
+   var fn = crearSaludo("Estudiante");
+   fn(); // "Hola, Estudiante!"
+```
+
+### Clases en Brea
+
+**Brea** es **orientado a objetos**, con clases simples y comprensibles:
+
+```javascript
+   class Desayuno {
+      init(comida){
+         this.comida = comida;
+      }
+
+      servir(quien){
+         print "Disfruta tu " + this.comida + ", " + quien;
+      }
+   }
+
+   var desayuno = Desayuno("tostadas");
+   desayuno.servir("amigo"); // "Disfruta tu tostadas, amigo"
+```
+
+**init** es el constructor que inicializa la instancia.
+**this** hace referencia al objeto actual.
+
+Las **clases** son valores de **primera clase**, igual que las funciones.
+
+<br/>
+
+### Herencia en Brea: usando <
+
+En **Brea**, las clases pueden **heredar** de otras clases usando el **símbolo <**. Esto significa que una subclase toma todos los métodos y propiedades de su superclase, y además puede agregar o modificar su propio comportamiento.
+
+Ejemplo básico:
+
+```javascript
+   class Comida {
+      init(nombre){
+         this.nombre = nombre;
+      }
+
+      servir(){
+         print "Disfruta tu " + this.nombre;
+      }
+   }
+
+   class Almuerzo < Comida{
+      init(nombre, bebida){
+         // Llamamos al constructor de la superclase
+         super.init(nombre);
+         this.bebida = bebida;
+      }
+
+      servir(){
+         // Podemos extender el método de la superclase
+         super.servir();
+         print "con " + this.bebida;
+      }
+   }
+
+   var miAlmuerzo = Almuerzo("sopa", "agua");
+   miAlmuerzo.servir(); // "Disfruta tu sopa con agua"
+```
+
+Explicación paso a paso
+
+- **< indica herencia**: class Almuerzo < Comida significa que Almuerzo hereda de Comida. Todo lo que Comida puede hacer, Almuerzo también puede hacerlo, a menos que lo sobrescriba.
+
+- **Llamada a super.init()**: Cuando sobrescribimos el constructor (init) de la subclase, usamos super.init(...) para invocar el constructor de la superclase y asegurarnos de inicializar correctamente las propiedades heredadas.
+
+- **Sobrescribir métodos**: En la subclase podemos redefinir métodos. Si queremos mantener el comportamiento de la superclase y añadir algo extra, usamos super.metodo() dentro de nuestro método sobrescrito.
+
+- **Agregar nuevas propiedades o métodos**: La subclase puede añadir propiedades nuevas (como bebida) o métodos nuevos, que no existen en la superclase.
+
+```javascript
+class Almuerzo < Comida{
+  init(nombre, bebida){
+    super.init(nombre);
+    this.bebida = bebida;
+  }
+
+  acompañamiento(){
+    print "Hoy tienes pan con tu " + this.nombre;
+  }
+}
+```
+
+Piensa en **Brea** como un juego de LEGO:
+
+- La superclase es una base: ya tiene algunas piezas.
+- La subclase toma esa base y puede añadir nuevas piezas o modificar las que ya vienen.
+- **<** es el símbolo que dice: "quiero usar esta base y ampliarla". 🧱
+
+<br/><hr/><br/>
+
+## 10. [💡 Lo que aprenderás creando un lenguaje](#-índice-del-capítulo)
 
 Implementar un lenguaje te obliga a:
 
-- Comprender **en profundidad las estructuras de datos** que normalmente usamos sin pensar.
-- Entender cómo **los algoritmos interactúan con la memoria y los datos**.
+- Comprender en profundidad las estructuras de datos que normalmente usamos sin pensar.
+- Entender cómo los algoritmos interactúan con la memoria y los datos.
 - Diseñar un sistema complejo de manera modular y comprensible.
 
-A medida que avancemos, notaremos que el desafío **no está solo en escribir código**, sino en **tomar decisiones de diseño consciente**, equilibrando claridad, eficiencia y escalabilidad.
+A medida que avancemos, notaremos que el desafío no está solo en escribir código, sino en tomar decisiones de diseño consciente, equilibrando claridad, eficiencia y escalabilidad.
+
+Comenzaremos creando **jBrea** en Java, enfocándonos en claridad y comprensión.
+
+Después construiremos **cBrea** en C, para aprender sobre eficiencia y control a bajo nivel.
+
+Cada sección incluirá teoría, ejemplos y ejercicios prácticos, permitiéndote aprender haciendo.
 
 <br/><hr/><br/>
 
-## 8. [🧭 Resumen del capítulo](#-índice-del-capítulo)
-
-- Comenzamos con **jBrea en Java**, centrándonos en claridad y comprensión.
-- Después construiremos **cBrea en C**, para aprender sobre eficiencia y control a nivel bajo.
-- Cada sección incluiré teoría, ejemplos y ejercicios prácticos, permitiéndote **aprender haciendo**.
-
-<br/><hr/><br/>
-
-## 9. [✏️ Ejercicios propuestos](#-índice-del-capítulo)
+## 11. [✏️ Ejercicios propuestos](#-índice-del-capítulo)
 
 - [**Ejercicio Propuesto 1**](../ejercicios/tema-01/01-ejercicios.md)
 
@@ -142,12 +417,6 @@ A medida que avancemos, notaremos que el desafío **no está solo en escribir c�
 - [**Ejercicio Propuesto 2 (Dasafio)**](../ejercicios/tema-01/02-ejercicios.md)
 
 > 💬 Para practicar con punteros, define una lista doblemente enlazada de cadenas en el heap. Escribe funciones para insertar, buscar y eliminar elementos de la lista.
-
-<br/><hr/><br/>
-
-> ¡Felicidades! 🎉 Has completado tu primer vistazo a Brea.  
-> Antes de escribir código, exploraremos un **mapa del lenguaje** que todo lenguaje de programación debe recorrer: va desde el **código fuente**, pasando por **símbolos (tokens)**, el **árbol sintáctico (syntax tree)**, ... hasta llegar a nuestro **código de máquina o bytecode**.  
-> 🌟 No entraremos en detalle todavía, eso lo exploraremos paso a paso en la siguiente sección.
 
 <br/><hr/><br/>
 

@@ -23,8 +23,10 @@ Aquí no solo seguirás un tutorial, sino que **exploraremos juntos los fundamen
         - [⚙️ Segunda fase: cBrea en C]
         - [🧪 El aprendizaje práctico]
         - [🔑 Conceptos clave a dominar]
-        - [💡 Por qué es un gran ejercicio]
-        - [🧭 Resumen del capítulo]
+        - [💻 Primer vistazo al lenguaje Brea y tipos de datos]
+        - [⚡ Expresiones, operadores y control de flujo]
+        - [🛠️ Funciones, closures y clases]
+        - [💡 Lo que aprenderás creando un lenguaje]
         - [✏️ Ejercicios propuestos]
 ```
 
