@@ -56,7 +56,8 @@ Aquí no solo seguirás un tutorial, sino que **exploraremos juntos los fundamen
 ### 📘 [3. El inicio del Interprete (Scanning) ](docs/03-ElInicioDelInterprete.md)
 
 ```text
-        -[ 🛠️ ... (desarrollando) ]
+        - [🛠️ Entendiendo el framework del intérprete jBrea]
+        - [🚧 ... (desarrollando) ]
 ```
 
 <br/><hr/><br/>
