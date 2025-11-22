@@ -5,7 +5,11 @@
 
 <br/><hr/><br/>
 
-[intro del capitulo]
+El primer paso para que **Brea** entienda nuestro código es convertir la cadena de texto en algo que el programa pueda procesar.
+
+El **scanner** se encarga de leer cada carácter y agruparlo en **tokens**, que son como las piezas de Lego del lenguaje. 🧩
+
+Al final de este capítulo, tendremos un pequeño **“traductor”** que convierte nuestro código en información clara para el **parser**, listo para analizar la lógica del programa.
 
 <br/><hr/><br/>
 
