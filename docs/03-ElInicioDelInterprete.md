@@ -13,6 +13,8 @@
 
 ## Índice del capitulo 3
 
+| Sección                                                                                                   | Descripción                                                                                                                                                              |
+| --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | [1. 🛠️ Entendiendo el framework del intérprete jBrea](#1-️-entendiendo-el-framework-del-intérprete-jbrea) | Explicamos la estructura básica de jBrea, cómo se inicia, cómo procesa archivos y entrada interactiva, y la función central run() que prepara el código para el escáner. |
 
 <br/><hr/><br/>
