@@ -57,6 +57,11 @@ Aquí no solo seguirás un tutorial, sino que **exploraremos juntos los fundamen
 
 ```text
         - [🛠️ Entendiendo el framework del intérprete jBrea]
+        - [💓 La clase principal: el corazón del intérprete]
+        - [🏃‍♂️ Ejecutar un archivo de Brea con el interprete jBrea]
+        - [⌨️ Ejecutar Brea de forma interactiva (REPL)]
+        - [⚡ La función de nuestro interprete más importante por ahora: run()]
+        - [🌀 Del código al scanner: el flujo del interprete jBrea]
         - [🚧 ... (desarrollando) ]
 ```
 
