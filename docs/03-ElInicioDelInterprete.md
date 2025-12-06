@@ -134,7 +134,7 @@ El método **main(String[] args)** recibe esos argumentos dentro del arreglo o v
 
 <br/>
 
-**Pongamos un ejemplo sencillo**
+**👉 Pongamos un ejemplo sencillo**
 
 Imagina que ejecutas esto en tu terminal:
 
@@ -149,7 +149,7 @@ Entonces tendremos lo siguiente:
   args.length = 1  //si comprobamos la longitud de nuestro vector será igual a 1
 ```
 
-En este ejemplo sencillo estamos pasando un argumento, que es el nombre del archivo ("holo.brea").
+En este ejemplo sencillo estamos pasando un argumento, que es el nombre del archivo ("hola.brea").
 
 <br/>
 
@@ -167,7 +167,7 @@ Entonces tendremos:
   args.length = 0  //si a nuestro vector comprobamos su longitud, vemos que es igual 0
 ```
 
-Si nadie pasó argumentos → el programa lo sabe, y por eso nuestro interprete lo vamos a configuar para que entre en un **modo interactivo (REPL)**
+Si nadie pasó argumentos → el programa lo sabe, y por eso nuestro interprete lo vamos a configurar para que entre en un **modo interactivo (REPL)**
 
 <br/>
 
@@ -216,7 +216,7 @@ Porque dependiendo de cuántos argumentos reciba el programa, jBrea debe comport
   jBrea archivo1.brea archivo2.brea
 ```
 
-Por eso hemos usamos la siguiente estructura if-else:
+Por eso hemos usamos la siguiente estructura if-else if-else:
 
 ```java
   if (args.length > 1) {
@@ -230,9 +230,9 @@ Por eso hemos usamos la siguiente estructura if-else:
 
 💡 Resumiendo, piensa en los **argumentos** como las “palabras extra” que le dices al programa cuando lo ejecutas.
 
-> Sin argumentos ejecutas solo el programa → entra al **modo interactivo**
-> Le das el nombre de un archivo → lo **interpreta**
-> Le das dos nombres de archivo → se confunde, te marca **error**
+- Sin argumentos solo ejecutas el programa → entra al **modo interactivo**
+- Si le das el nombre de un archivo → lo **interpreta**
+- Si le das dos nombres de archivos → se confunde, te marca **error**
 
 <br><hr/><br/>
 
@@ -372,7 +372,7 @@ El **modo interactivo** es súper útil cuando quieres probar ideas sin crear ar
 - Si el usuario escribe algo, lo pasamos a **run()**.
 - Si presiona Ctrl + D (fin de archivo), salimos del REPL.
 
-> Realizamos como un ciclo, gracias al bucle de nuestro códgio, es como si fuese: Leer → Procesar → Mostrar → Repetir. Hasta que el usuario quiera salir del REPL.
+> Realizamos como un **ciclo**, gracias al bucle de nuestro código, es como si fuese: Leer → Procesar → Mostrar → Repetir. Hasta que el usuario quiera salir del REPL.
 
 > 💡 **Nota sobre EOF (fin de archivo)**: Para salir del modo interactivo (REPL), necesitas enviar una señal de fin de entrada a la terminal. Dependiendo del sistema operativo, esta combinación de teclas cambia. **Linux / macOS**: usa Ctrl + D ; **Windows (cmd / PowerShell):** usa Ctrl + Z y luego presiona ENTER. Estas teclas le dicen a Java que ya no hay más texto para leer, por lo que readLine() devuelve null y el REPL se cierra.
 
@@ -380,7 +380,7 @@ El **modo interactivo** es súper útil cuando quieres probar ideas sin crear ar
 
 ## [5. ⚡ La función de nuestro interprete más importante por ahora: run()](#-índice-del-capitulo-3)
 
-Esta función es el puente entre texto crudo y tokens procesados.
+Esta función es el puente entre el **texto crudo** y los **tokens procesados**.
 
 ```java
     /**
@@ -460,9 +460,9 @@ Esta función es el puente entre texto crudo y tokens procesados.
 
 **¿Qué hace exactamente?**
 
-- Creamos una instancia del scanner.
-- Le pedimos que convierta todo el texto en una lista de tokens.
-- Imprimimos esos tokens para verificar que el scanner funciona correctamente.
+- Creamos una **instancia del scanner**.
+- Le pedimos que convierta todo el texto en una **lista de tokens**.
+- Imprimimos esos **tokens** para verificar que el scanner funciona correctamente.
 
 En este punto todavía no interpretamos nada. Solo estamos comprobando que somos capaces de leer código y dividirlo en piezas reconocibles.
 
@@ -502,6 +502,10 @@ Entrada del usuario (archivo o consola)
 ```
 
 > 🔑 **Idea clave**: Antes de interpretar expresiones, funciones o variables, primero debemos ser capaces de reconocer los símbolos que las componen. El **scanner** es la primera etapa real de comprensión del lenguaje.
+
+<br/><hr/><br/>
+
+> 🛠️🛠️🛠️ desarrollando más secciones ...
 
 <br/><hr/><br/>
 
