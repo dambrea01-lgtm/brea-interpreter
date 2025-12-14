@@ -22,6 +22,7 @@
 | [5. ⚡ La función de nuestro intérprete más importante por ahora: run()](#5--la-función-de-nuestro-interprete-más-importante-por-ahora-run) | Detallamos la función `run()`, que toma el código fuente y lo envía al scanner para generar tokens. Por ahora solo los imprimimos, pero es la base del procesamiento futuro del lenguaje.                  |
 | [6. 🌀 Del código al scanner: el flujo del intérprete jBrea](#6--del-código-al-scanner-el-flujo-del-interprete-jbrea)                       | Resumimos todo el flujo desde que jBrea recibe un archivo o entrada interactiva hasta que el scanner genera la lista de tokens. Esta visión completa muestra cómo se organiza el procesamiento del código. |
 | [7. 🧯 Manejo de errores en el intérprete](#7--manejo-de-errores-en-el-intérprete)                                                          | Explicamos la importancia de los errores, cómo reportarlos con `error()` y `report()`, la bandera `hadError`, y cómo se integra en `runFile()` y `runPrompt()` para evitar ejecutar código roto.           |
+| [8. 🔍 Léxicos y Tokens](#8--léxicos-y-tokens)                                                                                              | Introducimos el análisis léxico, explicamos qué son **lexemas** y **tokens**, cómo se representan en Java con `TokenType` y `Token`, y cómo el scanner procesa los caracteres del código fuente.           |
 
 <br/><hr/><br/>
 
@@ -785,6 +786,216 @@ Para evitar que el código del scanner o del parser se complique con detalles de
 En este caso, aunque no se implementa una solución tan avanzada como una interfaz **ErrorReporter**, al menos centralizamos el **reporte de errores** en la **clase principal Brea**, lo que simplifica el mantenimiento y mejora la organización del código.
 
 Esto ayuda a que el sistema sea más **flexible y modular**, lo que es clave cuando el proyecto crece.
+
+<br/><hr/><br/>
+
+## [8. 🔍 Léxicos y Tokens](#-índice-del-capitulo-3)
+
+Cuando nuestro **intérprete** recibe un código, lo primero que hace es entender qué significan las letras y símbolos. Esto se llama **análisis léxico.**
+
+Imagina esta línea en Brea:
+
+```java
+  var name = "brea";
+```
+
+Aquí podemos lo siguiente:
+
+- **var** es una palabra clave que indica que estamos declarando una variable.
+- **"name"** es el nombre de la variable.
+- **"="** es el operador de asignación.
+- **"brea"** es una cadena literal.
+- **";"** marca el final de la instrucción.
+
+El **scanner** lee carácter por carácter y agrupa las letras en bloques que tengan significado. A cada uno de estos bloques lo llamamos **lexema**. En este ejemplo, los **lexemas** serían:
+
+```text
+  var
+  name
+  =
+  "brea"
+  ;
+```
+
+> 💡 **Tip:** Si sacas caracteres al azar, como "a-m-e" de name, eso no tendría significado. El **análisis léxico** se trata de dar sentido a los caracteres, no solo leerlos.
+
+<br/>
+
+### 🔑 Tokens: cuando los lexemas se vuelven útiles
+
+Un **lexema** es solo la subcadena del código fuente, pero para que nuestro **intérprete** pueda trabajar con él, necesitamos agregar información extra, como:
+
+- **Tipo de token** (VAR, IDENTIFIER, STRING, PLUS, etc.)
+- **Valor literal** (para números o strings)
+- **Línea donde apareció** (para reportar errores)
+
+Cuando combinamos un **lexema** con esta información, obtenemos un **token**.
+
+Esto permite que el **parser** no tenga que comparar strings cada vez. Por ejemplo, cuando el **parser** ve un token VAR, sabe que es la palabra clave para declarar variables, sin tener que revisar si el lexema es "var".
+
+<br />
+
+### 📝 Enum TokenType
+
+Para que el **intérprete** reconozca qué tipo de **token** es cada **lexema**, definimos un **enumerado en Java**. Cada tipo de token corresponde a algo que el lenguaje Brea reconoce:
+
+- Palabras clave: VAR, IF, WHILE, etc.
+- Operadores: PLUS, MINUS, EQUAL, etc.
+- Literales: STRING, NUMBER
+- Signos de puntuación: SEMICOLON, COMMA, LEFT_PAREN, etc.
+
+Creamos un archivo **TokenType.java** dentro de tu paquete principal lenguaje.brea junta a la clase principal:
+
+<br/>
+
+```java
+  package lenguaje.brea;
+
+  /**
+   * Enum que lista todos los tipos de tokens que nuestro intérprete reconoce.
+   * Cada constante indica qué tipo de lexema representa.
+   */
+  public enum TokenType {
+
+      // Tokens de un solo carácter
+      LEFT_PAREN,    // '(' paréntesis izquierdo
+      RIGHT_PAREN,   // ')' paréntesis derecho
+      LEFT_BRACE,    // '{' llave izquierda
+      RIGHT_BRACE,   // '}' llave derecha
+      COMMA,         // ',' coma
+      DOT,           // '.' punto
+      MINUS,         // '-' signo menos
+      PLUS,          // '+' signo más
+      SEMICOLON,     // ';' punto y coma
+      SLASH,         // '/' barra
+      STAR,          // '*' asterisco
+
+      // Tokens de uno o dos caracteres
+      BANG,          // '!' signo de exclamación
+      BANG_EQUAL,    // '!=' diferente
+      EQUAL,         // '=' igual
+      EQUAL_EQUAL,   // '==' igual a
+      GREATER,       // '>' mayor que
+      GREATER_EQUAL, // '>=' mayor o igual
+      LESS,          // '<' menor que
+      LESS_EQUAL,    // '<=' menor o igual
+
+      // Literales
+      IDENTIFIER,    // nombres de variables o funciones
+      STRING,        // literales de texto entre comillas
+      NUMBER,        // literales numéricos
+
+      // Palabras clave
+      AND, IF, ELSE, OR,    // operadores lógicos y condicionales
+      CLASS, FUN, RETURN,   // definiciones y retorno de funciones/clases
+      TRUE, FALSE, NIL,     // valores booleanos y nulos
+      FOR, WHILE,           // bucles
+      VAR,                  // declaración de variables
+      PRINT,                // imprimir en consola
+      SUPER, THIS,          // referencias a objetos y herencia
+
+      // Fin de archivo
+      EOF                   // indica que no hay más tokens en el código fuente
+  }
+
+```
+
+<br/>
+
+💡 Explicación rápida: Cada tipo corresponde a algo que el lenguaje reconoce. Por ejemplo:
+
+- VAR → palabra clave para declarar variables.
+- PLUS → el símbolo +.
+- STRING → cualquier literal de texto entre comillas.
+
+Esto permite que el **parser** no tenga que comparar cadenas cada vez, lo que sería lento. Cuando el **scanner** reconoce un **lexema**, ya sabe qué **tipo de token** es.
+
+<br/>
+
+### 📝 Clase Token
+
+Luego, para agrupar toda la información de un **token** (tipo, lexema, valor literal y línea), creamos una clase Token:
+
+<br/>
+
+```java
+  package lenguaje.brea;
+
+  /**
+   * Representa un token en Brea.
+   * Contiene información útil para el parser y para mostrar errores.
+   */
+  public class Token {
+
+      final TokenType type;   // Tipo del token (palabra clave, operador, literal, etc.)
+      final String lexeme;    // La subcadena exacta del código fuente
+      final Object literal;   // Valor literal (para números, strings, etc.)
+      final int line;         // Línea en la que aparece este token
+
+      /**
+       * Constructor de Token
+       * @param type Tipo de token
+       * @param lexeme Subcadena del código fuente
+       * @param literal Valor literal, si aplica
+       * @param line Línea donde aparece el token
+       */
+      public Token(TokenType type, String lexeme, Object literal, int line) {
+          this.type = type;
+          this.lexeme = lexeme;
+          this.literal = literal;
+          this.line = line;
+      }
+
+      /**
+       * Representación en texto del token
+       * Útil para depuración mientras construimos el intérprete
+       */
+      @Override
+      public String toString() {
+          return type + " " + lexeme + " " + literal;
+      }
+  }
+
+```
+
+<br/>
+
+**💡 Cómo funciona esto:** Cuando el **scanner** encuentra un **lexema**, crea un **token**. El **token** guarda la siguiente información:
+
+- Tipo de token (por ejemplo VAR o IDENTIFIER)
+- Lexema (la cadena real "var" o "language")
+- Literal (el valor real si aplica, como "brea")
+- Línea donde apareció
+
+<br/>
+
+### 📝 Optimización de posición
+
+Cuando el **scanner** analiza el código fuente, lee carácter por carácter para formar **lexemas**. Algunos **intérpretes** guardan dos datos extra para cada **token**:
+
+1. **Offset (desplazamiento)**: la posición en el archivo donde empieza el lexema. Por ejemplo, si tu archivo empieza así:
+
+```java
+  var name = "brea";
+```
+
+y el scanner está leyendo "name", el **offset** sería 4, porque "n" es el quinto carácter del archivo (contando desde 0).
+
+2. **Longitud del lexema:** cuántos caracteres ocupa el lexema. En el ejemplo, "name" tiene 4 caracteres, así que la longitud es 4.
+
+Con estos dos valores, más tarde podemos calcular fácilmente en qué línea y columna está el lexema, contando los saltos de línea anteriores. Esto es útil si queremos mostrar mensajes de error como:
+
+```java
+  [line 1, col 5] Error: Unexpected token
+```
+
+> 💡 Importante: Guardar **offset y longitud** no añade mucho trabajo porque el scanner ya recorre todos los caracteres. Solo necesitamos convertir **offset → línea/columna** cuando realmente queremos mostrar un **error**. La mayoría de los tokens nunca aparecen en mensajes de error, así que no tiene sentido calcular su posición exacta por adelantado; sería una pérdida de tiempo.
+
+<br/>
+
+### 🌟 ¡Sigamos avanzando!
+
+Cada **token** que identificamos y cada **lexema** que agrupamos son pasos esenciales para construir nuestro **intérprete Brea**. Puede parecer solo un análisis de texto, pero poco a poco estamos formando las piezas que más adelante permitirán ejecutar programas completos. Paso a paso, línea a línea, nuestro **intérprete** va tomando forma: lo que ahora son **tokens** será pronto **código vivo** que podremos **ejecutar y probar**.
 
 <br/><hr/><br/>
 
