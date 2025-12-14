@@ -799,7 +799,7 @@ Imagina esta línea en Brea:
   var name = "brea";
 ```
 
-Aquí podemos lo siguiente:
+Aquí podemos ver lo siguiente:
 
 - **var** es una palabra clave que indica que estamos declarando una variable.
 - **"name"** es el nombre de la variable.
@@ -990,6 +990,8 @@ Con estos dos valores, más tarde podemos calcular fácilmente en qué línea y 
 ```
 
 > 💡 Importante: Guardar **offset y longitud** no añade mucho trabajo porque el scanner ya recorre todos los caracteres. Solo necesitamos convertir **offset → línea/columna** cuando realmente queremos mostrar un **error**. La mayoría de los tokens nunca aparecen en mensajes de error, así que no tiene sentido calcular su posición exacta por adelantado; sería una pérdida de tiempo.
+
+> ⚡ Nota para más adelante: Esta optimización es útil para mejorar los **mensajes de error** y dar información más precisa al usuario. Pero por ahora no la implementaremos, porque queremos poner en marcha el intérprete con lo básico primero. Luego, cuando tengamos todo funcionando, podremos mejorar esta parte sin complicar el código inicial.
 
 <br/>
 
