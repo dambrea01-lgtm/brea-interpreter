@@ -21,6 +21,7 @@
 | [4. ⌨️ Ejecutar Brea de forma interactiva (REPL)](#4-️-ejecutar-brea-de-forma-interactiva-repl)                                             | Explicamos el modo interactivo: leer línea por línea, procesar el texto con `run()`, mostrar resultados y cómo salir usando EOF (Ctrl+D en Linux/macOS, Ctrl+Z + ENTER en Windows).                        |
 | [5. ⚡ La función de nuestro intérprete más importante por ahora: run()](#5--la-función-de-nuestro-interprete-más-importante-por-ahora-run) | Detallamos la función `run()`, que toma el código fuente y lo envía al scanner para generar tokens. Por ahora solo los imprimimos, pero es la base del procesamiento futuro del lenguaje.                  |
 | [6. 🌀 Del código al scanner: el flujo del intérprete jBrea](#6--del-código-al-scanner-el-flujo-del-interprete-jbrea)                       | Resumimos todo el flujo desde que jBrea recibe un archivo o entrada interactiva hasta que el scanner genera la lista de tokens. Esta visión completa muestra cómo se organiza el procesamiento del código. |
+| [7. 🧯 Manejo de errores en el intérprete](#7--manejo-de-errores-en-el-intérprete)                                                          | Explicamos la importancia de los errores, cómo reportarlos con `error()` y `report()`, la bandera `hadError`, y cómo se integra en `runFile()` y `runPrompt()` para evitar ejecutar código roto.           |
 
 <br/><hr/><br/>
 
@@ -502,6 +503,288 @@ Entrada del usuario (archivo o consola)
 ```
 
 > 🔑 **Idea clave**: Antes de interpretar expresiones, funciones o variables, primero debemos ser capaces de reconocer los símbolos que las componen. El **scanner** es la primera etapa real de comprensión del lenguaje.
+
+<br/><hr/><br/>
+
+## [7. 🧯 Manejo de errores en el intérprete](#-índice-del-capitulo-3)
+
+Cuando estamos construyendo un **intérprete**, es muy fácil concentrarse solo en “que funcione” y dejar los errores para más adelante. A mí también me pasó al principio. Sin embargo, el manejo de errores es una parte clave del lenguaje, incluso aunque no lo parezca.
+
+Si queremos que **Brea** sea un lenguaje que se pueda usar de verdad, entonces mostrar buenos errores es obligatorio.
+
+<br/>
+
+### 🤔 ¿Por qué los errores son tan importantes?
+
+Piénsalo desde el punto de vista del usuario: Cuando su código funciona bien, no piensa en el lenguaje. Está concentrado en su programa, en la lógica, en resolver su problema.
+
+El **intérprete** es **invisible**.
+
+Pero cuando aparece un error… ahí sí el **intérprete** entra en escena. En ese momento, el usuario depende totalmente de nosotros para entender: qué hizo mal, dónde está el error, cómo arreglarlo ...
+
+Si el **mensaje de error** es confuso, el usuario se frustra. En cambio si es claro, aprende más rápido y sigue adelante. Por eso se dice que los **mensajes de error** son parte de la interfaz del lenguaje.
+
+🚨 El **mínimo indispensable** en un interprete es: decir qué pasó y en qué línea
+
+Para empezar, vamos a implementar lo mínimo necesario para poder decir que **Brea** tiene **manejo de errores**:
+
+👉 indicar que ocurrió un error
+👉 mostrar en qué línea del código ocurrió
+
+No es perfecto, pero es mucho mejor que no decir nada.
+
+Vamos a centralizar este comportamiento en la **clase principal Brea**, para que cualquier parte del **intérprete** pueda reportar errores de la misma forma.
+
+<br/>
+
+### 🧩 Funciones básicas de reporte de errores
+
+Dentro de **Brea**, después del **método run()** descrita en el apartado anterior, agregamos estas funciones:
+
+<br/>
+
+```java
+  /**
+   * Función pública y estática para reportar errores en el intérprete.
+   *
+   * Esta es la función que usaremos desde otras partes del código
+   * (scanner, parser, etc.) cuando detectemos un error.
+   *
+   * ¿Por qué es static?
+   * - Porque pertenece al intérprete en general, no a una instancia concreta.
+   * - Nos permite llamarla fácilmente como: Brea.error(...)
+   *
+   * @param line    Número de línea donde ocurrió el error.
+   * @param message Mensaje que explica qué salió mal.
+   */
+  static void error(int line, String message) {
+
+      // No imprimimos el error directamente aquí.
+      // En su lugar, delegamos el trabajo a la función report().
+      //
+      // El segundo parámetro ("where") se deja vacío por ahora.
+      // Más adelante podría servir para indicar información extra
+      // sobre la posición exacta del error.
+      report(line, "", message);
+  }
+
+  /**
+   * Función interna que se encarga de mostrar el error al usuario.
+   *
+   * Es privada porque solo debe ser usada dentro de esta clase.
+   * El resto del intérprete nunca debería llamarla directamente.
+   *
+   * @param line    Línea del código fuente donde ocurrió el error.
+   * @param where   Información adicional sobre la ubicación del error
+   *                (por ahora no la usamos, pero queda preparada).
+   * @param message Descripción clara del error.
+   */
+  private static void report(int line, String where, String message) {
+
+      // Usamos System.err en lugar de System.out porque:
+      // - System.out se usa para la salida normal del programa
+      // - System.err se usa específicamente para mensajes de error
+      //
+      // Esto es una buena práctica en aplicaciones de consola.
+      System.err.println(
+
+          // Construimos el mensaje de error con el siguiente formato:
+          //
+          // [line X] Error: mensaje
+          //
+          // Ejemplo:
+          // [line 10] Error: Unexpected ',' in argument list.
+          "[line " + line + "] Error" + where + ": " + message
+      );
+
+      // Marcamos que ocurrió un error durante la ejecución.
+      //
+      // Esta variable (hadError) se usa más adelante para:
+      // - evitar ejecutar código con errores
+      // - decidir si el programa debe finalizar
+      // - controlar el comportamiento del REPL
+      hadError = true;
+  }
+```
+
+<br/>
+
+**¿Qué está pasando aquí?**
+
+Tenemos la función **error(...)** que usaremos desde otras partes del intérprete. La función **error** como parámetro: el **número de línea** donde ocurrió el error y un **mensaje** que explique qué pasó.
+
+Esta función no imprime nada directamente. En su lugar, llama a la función **report(...)**.
+
+**🔧 ¿Por qué dos funciones y no una sola?**
+
+La función **report(...)** es la función que realmente imprime el mensaje. La separamos porque más adelante podríamos querer: agregar más contexto, cambiar el formato del error o reutilizar la lógica.
+
+Por ahora, **where** está vacío, pero dejamos el diseño preparado para el futuro. Donde podemos mejorar nuestro interprete, una vez en funcionamiento.
+
+**📌 ¿Qué imprime el error?**
+
+Un mensaje como este: [line 15] Error: Unexpected "," in argument list.
+
+Esto ya es suficiente para que el usuario: sepa que hubo un error y vaya directo a la línea correcta.
+
+**😖 Ejemplo de un mal mensaje de error**
+
+Supongamos que el usuario escribe algo así en Brea:
+
+```java
+  var x = 10
+  print(x
+```
+
+En este caso, olvidó cerrar el paréntesis en la función print. Si nuestro intérprete fuera muy básico, podría mostrar algo como esto:
+
+```text
+  Error: Algo salió mal. Revisa tu código.
+```
+
+Este tipo de mensaje es malo porque no dice la línea donde ocurrió el error. Tampoco dice qué parte del código provocó el error, no sabemos si el error está en var x = 10 o en print(x.
+
+Por lo tanto, este tipo de mensajes no ayuda a corregir nuestros errores: el mensaje es genérico, no orienta al usuario a cómo arreglarlo. En resumen, es frustrante y confunde más que ayuda.
+
+**🌟 Ejemplo de un error más útil (aunque aún simple)**
+
+Un mensaje de error mucho más comprensible podría ser así:
+
+```text
+  [línea 2] Error: Se esperaba ')' después de los argumentos.
+  2 | print(x
+          ^-- Aquí
+```
+
+Este tipo de mensaje se indica la línea exacta (line 2) donde se cometió el error. También se explica qué pasó (Expected ')' after arguments). Además se señala la posición en el código con una flecha (^-- Aquí)
+
+Ahora el usuario sabe exactamente dónde mirar y qué corregir: simplemente agregar un paréntesis al final de print(x).
+
+Esto es increíblemente útil… pero también requiere mucho código extra, especialmente para manipular strings y posiciones de caracteres. Para este tutorial, no vale la pena complicarnos tanto. Nos quedamos con el número de línea, que ya aporta muchísimo valor.
+
+<br />
+
+### 🚦 La bandera hadError: evitando ejecutar código roto
+
+Ahora viene una parte muy importante. Dentro de la **clase Brea**, definimos esta variable:
+
+```java
+  static boolean hadError = false;
+```
+
+Esta bandera nos permite saber si ocurrió algún error en el proceso. Cada vez que se llama a **report(...)**, la marcamos como **true**.
+
+**🛑 ¿Para qué sirve esto?**
+
+Sirve para evitar ejecutar código que sabemos que está mal. Por ejemplo, cuando ejecutamos un archivo completo:
+
+```java
+  // Llamamos a la función run() y le pasamos todo el contenido del archivo.
+  // bytes contiene los datos del archivo leídos como un arreglo de bytes.
+  // Con `new String(bytes, Charset.defaultCharset())` convertimos esos bytes
+  // en un String usando el charset por defecto del sistema (UTF-8 en la mayoría de casos).
+  // Esto nos da el contenido completo del archivo como texto, listo para que
+  // el intérprete lo procese.
+  run(new String(bytes, Charset.defaultCharset()));
+
+  // Revisamos si ocurrió algún error durante la ejecución de run().
+  // La variable hadError se pone a true dentro de las funciones de manejo de errores
+  // (como report()) cada vez que detectamos un problema.
+  // Si hubo algún error, salimos inmediatamente del programa con un código de salida distinto de cero.
+  // En este caso, usamos System.exit(65), siguiendo la convención de códigos de error de Unix.
+  // Esto evita que el intérprete intente ejecutar un código que sabemos que está incorrecto.
+  if (hadError) System.exit(65);
+```
+
+Si hubo errores: no seguimos ejecutando y salimos del programa con un código distinto de cero. De esta forma, nos comportamos como un buen programa de línea de comandos.
+
+Por lo tanto, debemos agregar una condición en nuestra función **runFile** para que, en caso de que ocurra un error, el programa termine de manera segura con un código de salida distinto de cero. La función quedaría de la siguiente manera:
+
+```java
+  private static void runFile(String path) throws IOException{
+
+        // Leemos todos los bytes del archivo especificado por "path"
+        byte[] bytes = Files.readAllBytes(Paths.get(path));
+
+        // Convertimos los bytes a un String usando el charset por defecto del sistema
+        String source = new String(bytes, Charset.defaultCharset());
+
+        // Ejecutamos el contenido del archivo
+        run(source);
+
+        // Si ocurrió algún error durante la ejecución, salimos del programa
+        // con un código de salida 65 para indicar que hubo un fallo
+        if (hadError) System.exit(65);
+    }
+```
+
+**🔄 ¿Y qué pasa en el modo interactivo (REPL)?**
+
+En el REPL no queremos que un error mate toda la sesión. Por eso, después de ejecutar cada línea, reiniciamos la bandera:
+
+```java
+  // Ejecutamos la línea de código que el usuario acaba de escribir en el REPL.
+  // `line` es un String que contiene exactamente lo que el usuario escribió.
+  // La función run() se encargará de procesarla: pasarla al scanner, generar tokens,
+  // y, eventualmente, evaluar o ejecutar la instrucción.
+  run(line);
+
+  // Reiniciamos la bandera hadError después de ejecutar la línea.
+  // Esto es importante porque estamos en modo interactivo (REPL):
+  // - Si el usuario cometió un error en esta línea, ya se mostró el mensaje correspondiente.
+  // - Pero no queremos que ese error bloquee las siguientes líneas que escriba.
+  // Por eso ponemos hadError = false, para que el intérprete siga funcionando
+  // y pueda procesar nuevas líneas aunque la anterior tuviera errores.
+  hadError = false;
+
+```
+
+De esta forma: el usuario comete un error, se muestra el mensaje y puede seguir escribiendo código sin reiniciar el intérprete.
+
+Entonces para el **modo interactivo (REPL)** también debemos considerar el manejo de errores. Como cada línea que el usuario escribe se ejecuta de manera independiente, es importante reiniciar la bandera **hadError** después de procesar cada línea. Esto garantiza que un **error** en una línea no bloquee la ejecución de las siguientes. La función **runPrompt** con la integración de **hadError** quedaría así:
+
+```java
+  private static void runPrompt() throws IOException {
+
+      // Creamos un lector que recoge lo que el usuario escribe en la consola
+      InputStreamReader input = new InputStreamReader(System.in);
+      BufferedReader reader = new BufferedReader(input);
+
+      // Ciclo infinito para mantener activo el REPL hasta que el usuario decida salir
+      for (;;) {
+
+          // Mostramos un prompt visual para que el usuario escriba su línea de código
+          System.out.print("~> ");
+
+          // Leemos la línea que el usuario escribió
+          String line = reader.readLine();
+
+          // Si el usuario envía EOF (Ctrl+D o Ctrl+Z + ENTER), salimos del REPL
+          if (line == null) break;
+
+          // Ejecutamos la línea usando run()
+          run(line);
+
+          // Reiniciamos la bandera hadError para que el REPL pueda continuar
+          // aun si hubo un error en la línea anterior
+          hadError = false;
+      }
+  }
+```
+
+<br/>
+
+### 🧱 Separar quién detecta errores y quién los muestra
+
+El **manejo de errores** en un **intérprete** debe estar bien organizado. El **scanner**, el **parser** y otras fases pueden **detectar errores**, pero no es su responsabilidad decidir cómo **mostrar esos errores**. Mostrar errores es una tarea separada, que depende del **entorno o la interfaz de usuario**.
+
+Por ejemplo, en un proyecto más grande, los errores pueden mostrarse en la consola, en un IDE, o incluso guardarse en un archivo de registro (log).
+
+Para evitar que el código del scanner o del parser se complique con detalles de presentación, es recomendable separar la **lógica de detección de errores** de la **lógica de presentación**.
+
+En este caso, aunque no se implementa una solución tan avanzada como una interfaz **ErrorReporter**, al menos centralizamos el **reporte de errores** en la **clase principal Brea**, lo que simplifica el mantenimiento y mejora la organización del código.
+
+Esto ayuda a que el sistema sea más **flexible y modular**, lo que es clave cuando el proyecto crece.
 
 <br/><hr/><br/>
 

@@ -62,6 +62,7 @@ Aquí no solo seguirás un tutorial, sino que **exploraremos juntos los fundamen
         - [⌨️ Ejecutar Brea de forma interactiva (REPL)]
         - [⚡ La función de nuestro interprete más importante por ahora: run()]
         - [🌀 Del código al scanner: el flujo del interprete jBrea]
+        - [🧯 Manejo de errores en el intérprete]
         - [🚧 ... (desarrollando) ]
 ```
 
